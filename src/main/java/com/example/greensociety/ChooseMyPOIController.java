@@ -136,7 +136,7 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
         rightVbox.getChildren().add(0, wrapper);
 
         printToPDF.setOnAction(e -> {
-            System.out.println("button triggered");
+            System.out.println("button triggered!");
             try (InputStream is = getClass().getResourceAsStream("Files/Template.pdf");
                  PDDocument templateDocument = PDDocument.load(is)) {
                 PDPage templatePage = templateDocument.getPage(0);
