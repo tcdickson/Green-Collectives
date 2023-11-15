@@ -84,14 +84,14 @@ For a complete list of dependencies and their versions, please refer to the [pom
 
 You can download the latest version of our application for different platforms:
 
-- [Linux (Debian-based)-.deb](https://github.com/tcdickson/Green-Collectives/Releases/v1.0.0/greencollectives_1.0_amd64.deb)
+- [Linux (Debian-based)-.deb](https://github.com/tcdickson/Green-Collectives/releases/tag/v1.0.0/greencollectives_1.0_amd64.deb)
 
-- [macOS - .dmg](https://github.com/tcdickson/Green-Collectives/Releases/v1.0.0/GreenCollectives-1.0.dmg)
+- [macOS - .dmg](https://github.com/tcdickson/Green-Collectives/releases/tag/v1.0.0/GreenCollectives-1.0.dmg)
 
 ## Author
 
 Tyler Dickson 
-[Email Me](tylerdickson17@gmail.com)
+[Email Me](mailto:tylerdickson17@gmail.com)
 
 ## License
 
