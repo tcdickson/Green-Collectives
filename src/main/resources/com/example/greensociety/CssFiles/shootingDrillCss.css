@@ -1,0 +1,74 @@
+.root {
+    -fx-background-color: #728362;;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: #c9c9c9;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: #c9c9c9;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #5A5A5A;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #3E3E3E;
+}
+
+.scroll-bar .track-background {
+    -fx-background-color: transparent;
+}
+
+
+.button {
+    -fx-background-color: transparent;
+    -fx-font-family: 'EdgyFont', sans-serif;
+    -fx-text-fill: darkslategray;
+    -fx-font-size: 16px;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-padding: 0 0;
+    -fx-background-radius: 0;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+.button:hover {
+    -fx-background-color:   #daa520;
+}
+
+.button-bar.button:pressed {
+    -fx-background-color: #3E9142;
+}
+
+#header {
+    -fx-font-size: 44px;
+    -fx-text-fill: darkslategray;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    }
+
+.text-area-style {
+    -fx-font-family: 'Arial Black';
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #363534;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+
+}
+
+.text-area .content {
+    -fx-background-color: #728362;
+}

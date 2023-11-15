@@ -1,0 +1,59 @@
+.root {
+    -fx-background-color: #728362;;
+}
+
+#header {
+    -fx-font-size: 44px;
+    -fx-text-fill: darkslategray;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    }
+
+#h2 {
+    -fx-font-size:15px;
+    -fx-text-fill: darkslategray;
+    -fx-font-family: "Arial Black";
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    }
+
+.button {
+    -fx-background-color: transparent;
+    -fx-font-family: 'EdgyFont', sans-serif;
+    -fx-text-fill: darkslategray;
+    -fx-font-size: 16px;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-padding: 0 0;
+    -fx-background-radius: 0;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+.button:hover {
+    -fx-background-color:   #daa520;
+}
+
+.button-bar.button:pressed {
+    -fx-background-color: #3E9142;
+}
+
+
+#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b10,#b11,#b12,#b13,#b14,#b15,#b16,#b17,#b18,#b19,#b20,#b21 {
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial Black";
+    -fx-text-alignment: center;
+    -fx-text-fill: #e3e2e1;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-font-weight: bold;
+    -fx-padding: 0 0;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}

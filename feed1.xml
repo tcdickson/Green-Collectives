@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Feed 1</title>
+    <link>https://www.rand.org/topics/national-security-and-terrorism.xml</link>
+    <description>Description for Feed 1</description>
+    <item>
+      <title>Entry 1 for Feed 1</title>
+      <link>https://www.rand.org/topics/international-affairs.xml</link>
+      <description>Description for Entry 1 in Feed 1</description>
+      <category>Category 1</category>
+      <guid>https://www.rand.org/topics/international-affairs.xml</guid>
+    </item>
+  </channel>
+</rss>

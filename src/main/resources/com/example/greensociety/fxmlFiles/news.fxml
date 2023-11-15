@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.WebView?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="1255.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.greensociety.NewsController">
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <StackPane alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="106.0" fitWidth="100.0" nodeOrientation="INHERIT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets left="15.0" top="30.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../JavaPics/greenSocietyIcon.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane alignment="TOP_RIGHT" prefHeight="150.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="106.0" fitWidth="100.0" nodeOrientation="INHERIT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets right="15.0" top="30.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../JavaPics/greenSocietyIcon.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+      <StackPane alignment="TOP_CENTER" prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="header" alignment="TOP_CENTER" contentDisplay="CENTER" text="Green Collectives" textAlignment="CENTER" wrapText="true">
+               <StackPane.margin>
+                  <Insets bottom="120.0" top="-35.0" />
+               </StackPane.margin>
+            </Label>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefWidth="1255.0" prefWrapLength="600.0">
+               <children>
+                  <ButtonBar buttonMinWidth="60.0">
+                     <buttons>
+                        <Button alignment="CENTER" maxWidth="70.0" mnemonicParsing="false" onAction="#switchHome" style=": 2px;" text="Home">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="95.0" mnemonicParsing="false" onAction="#switchResources" text="Resources">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchLinks" style=": 2px;" text="Links">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchRanges" text="Range Builder">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchWorkouts" text="Workouts">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchNews" text="News">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </buttons>
+                     <FlowPane.margin>
+                        <Insets bottom="10.0" top="-25.0" />
+                     </FlowPane.margin>
+                  </ButtonBar>
+               </children>
+               <StackPane.margin>
+                  <Insets top="15.0" />
+               </StackPane.margin>
+            </FlowPane>
+            <StackPane alignment="TOP_CENTER" prefHeight="80.0" StackPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="h2" alignment="CENTER" contentDisplay="TEXT_ONLY" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" text="There’s no such thing as “unbiased news”. However, below is a collection of news feed’s and scholarly articles that represent some of the “most neutral” outlets for staying on top of current events" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets left="65.0" right="65.0" />
+                     </padding>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </Label>
+               </children>
+               <StackPane.margin>
+                  <Insets top="90.0" />
+               </StackPane.margin>
+            </StackPane>
+         </children>
+         <VBox.margin>
+            <Insets top="-95.0" />
+         </VBox.margin>
+      </StackPane>
+      <ScrollPane fitToWidth="true">
+         <content>
+            <VBox fx:id="webViewsContainer" alignment="CENTER" stylesheets="@../CssFiles/news.css">
+               <children>
+                  <Label fx:id="label1" alignment="CENTER" contentDisplay="CENTER" text="The Hill- Real Time News">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <ListView fx:id="rssListView" prefHeight="300.0" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="label2" text="Newsweek- Real Time News" />
+                  <ListView fx:id="rssListView2" prefHeight="300.0" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="label3" text="National Security &amp; Terrorism" />
+                  <ListView fx:id="rssListView3" prefHeight="300.0" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="label4" text="Cyber &amp; Data Science" />
+                  <ListView fx:id="rssListView4" prefHeight="300.0" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="label5" text="Homeland Security &amp; Public Safety" />
+                  <ListView fx:id="rssListView5" prefHeight="300.0" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="label6" text="Pentegon &amp; Congress" />
+                  <ListView fx:id="rssListView6" prefHeight="300.0" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="label7" text="Military Education &amp; Transition" />
+                  <ListView fx:id="rssListView7" prefHeight="300.0" />
+                  <Label fx:id="label11" text="Army Pay &amp; Benefits" />
+                  <ListView fx:id="rssListView8" prefHeight="300.0" />
+                  <Label fx:id="label8" text="Atlas News" />
+                  <WebView fx:id="webView1" prefHeight="500.0" prefWidth="200.0" />
+                  <Label fx:id="label9" text="White House Briefing Room" />
+                  <WebView fx:id="webView2" prefHeight="500.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </content>
+         <VBox.margin>
+            <Insets top="45.0" />
+         </VBox.margin>
+      </ScrollPane>
+   </children>
+</VBox>

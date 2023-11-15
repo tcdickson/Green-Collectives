@@ -1,0 +1,85 @@
+.root {
+    -fx-background-color: #728362;;
+}
+
+#header {
+    -fx-font-size: 44px;
+    -fx-text-fill: darkslategray;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    }
+
+.label {
+    -fx-font-size:15px;
+    -fx-text-fill: darkslategray;
+    -fx-font-family: "Arial Black";
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    }
+
+#FitnessHeader {
+    -fx-font-family: 'EdgyFont', sans-serif;
+    }
+
+#chooseFighter {
+    -fx-background-color: #bcbcbc;
+    -fx-cursor: hand;
+    }
+
+#chooseFighter:hover {
+    -fx-background-color: #daa520;
+    }
+
+#home, #resources, #workouts, #links, #ranges, #news {
+    -fx-background-color: transparent;
+    -fx-font-family: 'EdgyFont', sans-serif;
+    -fx-text-fill: darkslategray;
+    -fx-font-size: 16px;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-padding: 0 0;
+    -fx-background-radius: 0;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+#home:hover {
+    -fx-background-color: #daa520;
+}
+
+#resources:hover {
+    -fx-background-color: #daa520;
+}
+
+#workouts:hover {
+    -fx-background-color: #daa520;
+}
+
+#links:hover {
+    -fx-background-color: #daa520;
+}
+
+#ranges:hover {
+    -fx-background-color: #daa520;
+}
+
+#news:hover {
+    -fx-background-color: #daa520;
+}
+
+.button {
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color:   #daa520;
+}
+
+.button-bar.button:pressed {
+    -fx-background-color: #3E9142;
+}
