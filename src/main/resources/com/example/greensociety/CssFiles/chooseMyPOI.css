@@ -1,0 +1,144 @@
+
+.root {
+    -fx-background-color: #728362;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-font-family: 'EdgyFont', sans-serif;
+    -fx-text-fill: darkslategray;
+    -fx-font-size: 16px;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-padding: 0 0;
+    -fx-background-radius: 0;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+.savePOI {
+    -fx-background-color: transparent;
+    -fx-font-family: 'EdgyFont', sans-serif;
+    -fx-text-fill: darkslategray;
+    -fx-font-size: 26px;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-padding: 0 0;
+    -fx-background-radius: 0;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+.button:hover {
+    -fx-background-color:   #daa520;
+}
+
+.button-bar.button:pressed {
+    -fx-background-color: #3E9142;
+}
+
+#header {
+    -fx-font-size: 44px;
+    -fx-text-fill: darkslategray;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+#h2 {
+    -fx-font-size:15px;
+    -fx-text-fill: darkslategray;
+    -fx-font-family: "Arial Black";
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+.spinner {
+    -fx-background-color: #f0f0f0;
+}
+
+.spinner .text-field {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Arial";
+}
+
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-background-radius: 0;
+    -fx-text-fill: white;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+    -fx-background-color: #daa520;
+    -fx-text-fill: black;
+}
+
+.spinner .increment-arrow,
+.spinner .decrement-arrow {
+ -fx-padding: 0.2em 0.3em;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #728362;
+    -fx-padding: 10px;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+     -fx-focus-color: #5A5A5A;
+     }
+
+ .scroll-pane {
+    -fx-border-width: 0px;
+    -fx-border-color: #5A5A5A;
+    -fx-focus-color: #5A5A5A;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-font-weight: bold;
+ }
+
+}
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: #c9c9c9;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+.scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: #c9c9c9;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #5A5A5A;
+    -fx-background-radius: 0;
+}
+
+.scroll-pane .scroll-bar .thumb:hover {
+    -fx-background-color: #3E3E3E;
+}
+
+.scroll-pane .scroll-bar .track-background {
+    -fx-background-color: transparent;
+}
+
+.hbox {
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+}
+
+.vbox {
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+}
+
+.custom-button {
+    -fx-font-size: 26px;
+}
+
+

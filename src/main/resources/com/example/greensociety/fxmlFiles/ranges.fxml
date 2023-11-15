@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox fx:id="vbox" prefHeight="759.0" prefWidth="1054.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.greensociety.RangesController">
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0">
+         <children>
+            <StackPane alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="106.0" fitWidth="100.0" nodeOrientation="INHERIT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets left="15.0" top="30.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../JavaPics/greenSocietyIcon.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane alignment="TOP_RIGHT" prefHeight="150.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="106.0" fitWidth="100.0" nodeOrientation="INHERIT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets right="15.0" top="30.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../JavaPics/greenSocietyIcon.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+      <StackPane alignment="TOP_CENTER" prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="header" alignment="CENTER" contentDisplay="TEXT_ONLY" nodeOrientation="LEFT_TO_RIGHT" text="Green Collectives" textOverrun="CLIP" wrapText="true">
+               <StackPane.margin>
+                  <Insets bottom="120.0" top="-35.0" />
+               </StackPane.margin>
+            </Label>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="150.0" prefWidth="841.0" prefWrapLength="600.0">
+               <children>
+                  <ButtonBar buttonMinWidth="60.0">
+                     <buttons>
+                        <Button fx:id="home" alignment="CENTER" maxWidth="70.0" mnemonicParsing="false" onAction="#switchHome" style=": 2px;" text="Home">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="resources" alignment="CENTER" maxWidth="95.0" mnemonicParsing="false" onAction="#switchResources" text="Resources">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="links" alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchLinks" style=": 2px;" text="Links">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="ranges" alignment="CENTER" mnemonicParsing="false" onAction="#switchRanges" text="Range Builder">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="workouts" alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchWorkouts" text="Workouts">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="news" alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchNews" text="News">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </buttons>
+                     <FlowPane.margin>
+                        <Insets top="-10.0" />
+                     </FlowPane.margin>
+                  </ButtonBar>
+               </children>
+               <StackPane.margin>
+                  <Insets top="-10.0" />
+               </StackPane.margin>
+            </FlowPane>
+         </children>
+         <VBox.margin>
+            <Insets top="-95.0" />
+         </VBox.margin>
+      </StackPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="h2" alignment="CENTER" contentDisplay="TEXT_ONLY" nodeOrientation="LEFT_TO_RIGHT" stylesheets="@../CssFiles/ranges.css" text="Welcome to the Range Builder. Here you can select pistol and/or rifle drills by checking the box next to each drill. You may preview the drill by clicking corresponding “preview” link. When finished building your range, click &quot;Build My POI&quot; to view your range day information, or save it as a PDF." textOverrun="CLIP" wrapText="true">
+               <padding>
+                  <Insets left="65.0" right="65.0" />
+               </padding>
+               <StackPane.margin>
+                  <Insets top="-15.0" />
+               </StackPane.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets top="-45.0" />
+         </VBox.margin>
+      </StackPane>
+   </children>
+</VBox>

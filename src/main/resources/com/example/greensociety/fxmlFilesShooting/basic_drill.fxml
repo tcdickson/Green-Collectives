@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox fx:id="drillVBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="1255.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.greensociety.BasicDrillController">
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0">
+         <children>
+            <StackPane alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="106.0" fitWidth="100.0" nodeOrientation="INHERIT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets left="15.0" top="30.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../JavaPics/greenSocietyIcon.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane alignment="TOP_RIGHT" prefHeight="150.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="106.0" fitWidth="100.0" nodeOrientation="INHERIT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets right="15.0" top="30.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../JavaPics/greenSocietyIcon.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+      <StackPane alignment="TOP_CENTER" prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="header" alignment="TOP_CENTER" contentDisplay="CENTER" text="Green Collectives" textAlignment="CENTER" wrapText="true">
+               <StackPane.margin>
+                  <Insets top="-40.0" />
+               </StackPane.margin>
+            </Label>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="73.0" prefWidth="841.0">
+               <children>
+                  <ButtonBar buttonMinWidth="60.0" stylesheets="@../CssFiles/links.css">
+                     <buttons>
+                        <Button alignment="CENTER" maxWidth="70.0" mnemonicParsing="false" onAction="#switchHome" style=": 2px;" text="Home">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="95.0" mnemonicParsing="false" onAction="#switchResources" text="Resources">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchLinks" style=": 2px;" text="Links">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchRanges" text="Range Builder">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchWorkouts" text="Workouts">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchNews" text="News">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </buttons>
+                  </ButtonBar>
+               </children>
+               <StackPane.margin>
+                  <Insets top="-10.0" />
+               </StackPane.margin>
+            </FlowPane>
+         </children>
+         <VBox.margin>
+            <Insets top="-90.0" />
+         </VBox.margin>
+      </StackPane>
+      <StackPane alignment="CENTER_LEFT" prefHeight="293.0" prefWidth="1255.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TextArea fx:id="textArea" editable="false" stylesheets="@../CssFiles/shootingDrillCss.css" wrapText="true">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin></TextArea>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </StackPane>
+   </children>
+</VBox>

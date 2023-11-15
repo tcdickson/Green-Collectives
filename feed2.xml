@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Feed 2</title>
+    <link>https://www.rand.org/topics/international-affairs.xml</link>
+    <description>Description for Feed 2</description>
+    <item>
+      <title>Entry 1 for Feed 2</title>
+      <link>http://www.feed2link.com/entry1</link>
+      <description>Description for Entry 1 in Feed 2</description>
+      <category>Category 2</category>
+      <guid>http://www.feed2link.com/entry1</guid>
+    </item>
+  </channel>
+</rss>

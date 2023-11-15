@@ -1,0 +1,181 @@
+.root {
+    -fx-background-color: #728362;;
+}
+
+ .scroll-pane {
+     -fx-background-color: #f0f0f0;
+ }
+
+.scroll-pane .scroll-bar {
+     -fx-background-color: #bcbcbc;
+ }
+
+.scroll-pane .scroll-bar .thumb {
+     -fx-background-color: #6a6a6a;
+ }
+
+.scroll-pane .viewport {
+     -fx-background-color: #728362;
+     -fx-padding: 10px;
+ }
+
+#header {
+    -fx-font-size: 44px;
+    -fx-text-fill: darkslategray;
+    -fx-font-weight: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+#h2 {
+    -fx-font-size:20px;
+    -fx-font-family: "Arial Black";
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+    -fx-fill: #5A5A5A;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+#listOfLinks  {
+    -fx-font-size:20px;
+    -fx-font-family: "Arial Black";
+    -fx-wrap-text: true;
+    -fx-fill: darkslategray;
+    -fx-cursor: hand;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-font-weight: bold;
+}
+
+.list-view {
+    -fx-background-color: #728362;
+    -fx-font-size:15px;
+    -fx-font-family: "Arial Black";
+    -fx-wrap-text: true;
+    -fx-fill: #5A5A5A;
+    -fx-cursor: hand;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-font-weight: bold;
+}
+
+.list-view .list-cell {
+    -fx-background-color: #728362;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: #5A5A5A;
+    -fx-text-fill: #728362;
+}
+
+.list-view .list-cell:selected {
+    -fx-border-color: #5A5A5A;
+    -fx-border-width: 2px;
+}
+
+.list-view .scroll-bar {
+    -fx-background-color: c9c9c9;
+    -fx-background-color: rgba(201, 201, 201, 0.5);
+}
+
+.list-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #5A5A5A;
+}
+
+.list-view .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #3E3E3E;
+}
+
+.list-view .scroll-bar:horizontal .thumb {
+    -fx-background-color: #5A5A5A;
+}
+
+.list-view .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #3E3E3E;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: #daa520;
+}
+
+.list-view .list-cell {
+    -fx-padding: 5px;
+    -fx-margin: 5px;
+}
+
+#header11 {
+    -fx-font-size:15px;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: darkslategray;
+    -fx-wrap-text: true;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-font-weight: bold;
+}
+
+#driveLabel, #categories {
+    -fx-font-size: 25px;
+    -fx-font-family: "Arial Black";
+    -fx-text-fill: darkslategray;
+    -fx-wrap-text: true;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+     -fx-font-weight: bold;
+     }
+
+
+#conops, #doctrine, #classes, #ranges, #other, #language, #russian {
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial Black";
+    -fx-text-alignment: center;
+    -fx-text-fill: #5A5A5A;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-font-weight: bold;
+    -fx-padding: 0 0;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+#b1:pressed {
+    -fx-background-color: #3E9142;
+}
+
+#b2:pressed {
+    -fx-background-color: #3E9142;
+}
+
+#b3:pressed {
+    -fx-background-color: #3E9142;
+}
+
+#b4:pressed {
+    -fx-background-color: #3E9142;
+}
+
+#b5:pressed {
+    -fx-background-color: #3E9142;
+}
+
+.button {
+    -fx-background-color: transparent;
+    -fx-font-family: 'EdgyFont', sans-serif;
+    -fx-text-fill: darkslategray;
+    -fx-font-size: 16px;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+    -fx-padding: 0 0;
+    -fx-background-radius: 0;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+.button:hover {
+    -fx-background-color:   #daa520;
+}
+
+.button-bar.button:pressed {
+    -fx-background-color: #3E9142;
+}

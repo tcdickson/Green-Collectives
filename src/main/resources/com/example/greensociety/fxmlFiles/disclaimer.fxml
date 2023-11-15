@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox fx:id="linksVbox" prefHeight="695.0" prefWidth="1053.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.greensociety.HomeApplication">
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0">
+         <children>
+            <StackPane alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView id="r2" fx:id="r21" fitHeight="106.0" fitWidth="100.0" nodeOrientation="INHERIT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets left="15.0" top="30.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../JavaPics/greenSocietyIcon.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane alignment="TOP_RIGHT" prefHeight="150.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fx:id="r11" fitHeight="106.0" fitWidth="100.0" nodeOrientation="INHERIT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets right="15.0" top="30.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../JavaPics/greenSocietyIcon.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+      <StackPane alignment="TOP_CENTER" prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="header" alignment="TOP_CENTER" contentDisplay="CENTER" text="Green Collectives" textAlignment="CENTER" wrapText="true">
+               <StackPane.margin>
+                  <Insets top="-20.0" />
+               </StackPane.margin>
+            </Label>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="73.0" prefWidth="841.0">
+               <children>
+                  <ButtonBar fx:id="bar11" buttonMinWidth="60.0" stylesheets="@../CssFiles/links.css">
+                     <buttons>
+                        <Button alignment="CENTER" maxWidth="70.0" mnemonicParsing="false" onAction="#switchHome" style=": 2px;" text="Home">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="myButton2" alignment="CENTER" maxWidth="95.0" mnemonicParsing="false" onAction="#switchResources" text="Resources">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchLinks" style=": 2px;" text="Links">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchRanges" text="Range Builder">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchWorkouts" text="Workouts">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchNews" text="News">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </buttons>
+                  </ButtonBar>
+               </children>
+            </FlowPane>
+         </children>
+         <VBox.margin>
+            <Insets top="-110.0" />
+         </VBox.margin>
+      </StackPane>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TextArea prefHeight="200.0" prefWidth="200.0" text="Green Collectives Disclaimer:&#10;&#10;Disclaimer of Endorsement:&#10;This application, Green Collectives is intended for use by members of the U.S. military and provides access to unclassified military files, workout information, shooting range planning tools, RSS feeds to news sources, and links to various military-sponsored websites.&#10;&#10;Green Collectives is developed and operated by Green Collectives LLC. However, it is important to note the following:&#10;Not Endorsed or Maintained by the U.S. Army: This application is not endorsed, maintained, or affiliated with the U.S. Army or any other branch of the U.S. military. The U.S. Army does not endorse or support this application, and the information and resources provided within this application do not necessarily represent the views or policies of the U.S. Army.&#10;&#10;Use at Your Own Risk: Users of Green Collectives are responsible for the information they access and the actions they take within the application. The application is provided on an &quot;as is&quot; basis, and Green Collectives LLC makes no warranties or representations regarding its accuracy, reliability, or suitability for any particular purpose.&#10;&#10;Third-Party Links and Content: Green Collectives may contain links to third-party websites and content. These links are provided for convenience and informational purposes only. Green Collectives LLC is not responsible for the content, accuracy, or legality of these third-party websites and does not endorse or guarantee the products, services, or information they offer.&#10;&#10;Legal Information: Green Collectives LLC is a limited liability company established to operate Green Collectives. Any legal matters related to the use of this application should be directed to the legal representatives of Green Collectives LLC.&#10;By using Green Collectives, you acknowledge and agree to the terms and conditions outlined in this disclaimer. If you do not agree with these terms, please refrain from using the application.&#10;&#10;This disclaimer is subject to change without notice. Users are encouraged to review it periodically for updates.&#10;" wrapText="true" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </children>
+</VBox>

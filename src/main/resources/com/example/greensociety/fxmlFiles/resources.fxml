@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox fx:id="vBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.greensociety.ResourcesController">
+
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0">
+         <children>
+            <StackPane alignment="TOP_LEFT" prefHeight="150.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="106.0" fitWidth="100.0" nodeOrientation="INHERIT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets left="15.0" top="30.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../JavaPics/greenSocietyIcon.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane alignment="TOP_RIGHT" prefHeight="150.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="106.0" fitWidth="100.0" nodeOrientation="INHERIT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <StackPane.margin>
+                        <Insets right="15.0" top="30.0" />
+                     </StackPane.margin>
+                     <image>
+                        <Image url="@../JavaPics/greenSocietyIcon.png" />
+                     </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+      <StackPane alignment="TOP_CENTER" prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="header" alignment="CENTER" contentDisplay="TEXT_ONLY" nodeOrientation="LEFT_TO_RIGHT" text="Green Collectives" textOverrun="CLIP" wrapText="true">
+               <StackPane.margin>
+                  <Insets bottom="120.0" top="-30.0" />
+               </StackPane.margin>
+            </Label>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="150.0" prefWidth="841.0" prefWrapLength="600.0">
+               <children>
+                  <ButtonBar buttonMinWidth="60.0">
+                     <buttons>
+                        <Button alignment="CENTER" maxWidth="70.0" mnemonicParsing="false" onAction="#switchHome" style=": 2px;" text="Home">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="95.0" mnemonicParsing="false" onAction="#switchResources" text="Resources">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchLinks" style=": 2px;" text="Links">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchRanges" text="Range Builder">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchWorkouts" text="Workouts">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="CENTER" maxWidth="90.0" mnemonicParsing="false" onAction="#switchNews" text="News">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </buttons>
+                     <FlowPane.margin>
+                        <Insets bottom="10.0" top="-30.0" />
+                     </FlowPane.margin>
+                  </ButtonBar>
+               </children>
+               <StackPane.margin>
+                  <Insets top="25.0" />
+               </StackPane.margin>
+            </FlowPane>
+         </children>
+         <VBox.margin>
+            <Insets top="-100.0" />
+         </VBox.margin>
+      </StackPane>
+      <StackPane alignment="TOP_CENTER" prefHeight="80.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label fx:id="h2" alignment="CENTER" contentDisplay="TEXT_ONLY" nodeOrientation="LEFT_TO_RIGHT" text="Welcome to the resource repository. Select a branch to browse and download (unclassified) files &amp; documents like Conops, doctrine, ect. submitted by others for collective use. You can share too! Visit the official website below" textOverrun="CLIP" wrapText="true">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Label>
+            <Button fx:id="hyperLink" mnemonicParsing="false" onAction="#openSite" text="GreenCollectives.com">
+               <StackPane.margin>
+                  <Insets top="40.0" />
+               </StackPane.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets top="-55.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="25.0" right="25.0" />
+         </padding>
+      </StackPane>
+      <FlowPane alignment="CENTER" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="200.0" stylesheets="@../CssFiles/Resources.css">
+               <children>
+                  <ImageView fx:id="deop" fitHeight="639.0" fitWidth="776.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <Image url="@../JavaPics/greenSocietyIcon.png" />
+                     <StackPane.margin>
+                        <Insets top="-45.0" />
+                     </StackPane.margin>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </ImageView>
+                  <Label fx:id="b1" text="Finance">
+                     <StackPane.margin>
+                        <Insets bottom="180.0" right="550.0" top="130.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="financeEffect" fitHeight="69.0" fitWidth="63.0" onMouseClicked="#switchFinance" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/financeNew.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="100.0" right="550.0" top="130.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b2" text="Armor">
+                     <StackPane.margin>
+                        <Insets bottom="580.0" left="450.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="armorEffect" fitHeight="63.0" fitWidth="71.0" layoutY="100.0" onMouseClicked="#switchArmor" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/Armor.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="500.0" left="450.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b3" stylesheets="@../CssFiles/Resources.css" text="Special Forces">
+                     <StackPane.margin>
+                        <Insets bottom="665.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="specialForcesEffect" fitHeight="87.0" fitWidth="100.0" onMouseClicked="#switchSpecialForces" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/sf.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="585.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b4" text="Infantry">
+                     <StackPane.margin>
+                        <Insets bottom="640.0" left="230.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="InfantryEffect" fitHeight="71.0" fitWidth="62.0" onMouseClicked="#switchInfantry" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/Infantry.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="560.0" left="230.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b5" text="Field Artillery">
+                     <StackPane.margin>
+                        <Insets bottom="640.0" right="230.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="faEffect" fitHeight="96.0" fitWidth="82.0" onMouseClicked="#switchFieldArtillery" pickOnBounds="true" preserveRatio="true">
+
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/fa.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="560.0" right="230.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b6" text="Engineer">
+                     <StackPane.margin>
+                        <Insets bottom="580.0" right="450.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="engineerEffect" fitHeight="64.0" fitWidth="63.0" onMouseClicked="#switchEngineer" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/en.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="500.0" right="450.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b7" minWidth="-Infinity" text="Ordnance">
+                     <StackPane.margin>
+                        <Insets bottom="400.0" right="550.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="ordnanceEffect" fitHeight="64.0" fitWidth="66.0" onMouseClicked="#switchOrdnance" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/Ord.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="320.0" right="550.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b8" text="Aviation">
+                     <StackPane.margin>
+                        <Insets bottom="400.0" left="550.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="aviationEffect" fitHeight="77.0" fitWidth="68.0" onMouseClicked="#switchAviation" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/US_Army_Aviation_logo.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="320.0" left="550.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b9" minWidth="-Infinity" text="Civil Affairs">
+                     <StackPane.margin>
+                        <Insets bottom="230.0" right="550.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="civilAffairsEffect" fitHeight="81.0" fitWidth="51.0" onMouseClicked="#switchCivilAffairs" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/CA.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="140.0" right="550.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b10" text="Military Police">
+                     <StackPane.margin>
+                        <Insets bottom="220.0" left="550.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="mpEffect" fitHeight="69.0" fitWidth="64.0" onMouseClicked="#switchMilitaryPolice" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/MP.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="140.0" left="550.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b13" text="Quartermaster">
+                     <StackPane.margin>
+                        <Insets left="100.0" top="420.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="qmEffect" fitHeight="56.0" fitWidth="77.0" onMouseClicked="#switchQM" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/qm.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets left="100.0" top="500.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b14" text="Chaplain">
+                     <StackPane.margin>
+                        <Insets bottom="180.0" left="550.0" top="130.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="chapEffect" fitHeight="86.0" fitWidth="78.0" onMouseClicked="#switchChaplain" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/chap.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="100.0" left="550.0" top="130.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b15" text="Adjutant">
+                     <StackPane.margin>
+                        <Insets right="480.0" top="115.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="adjutantEffect" fitHeight="64.0" fitWidth="62.0" onMouseClicked="#switchAdjutant" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/AG-logo.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets right="480.0" top="195.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b16" text="Signal">
+                     <StackPane.margin>
+                        <Insets left="480.0" top="115.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="signalEffect" fitHeight="86.0" fitWidth="78.0" onMouseClicked="#switchSignal" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/sig.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets left="480.0" top="195.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b17" text="JAG">
+                     <StackPane.margin>
+                        <Insets right="425.0" top="265.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="jagEffect" fitHeight="64.0" fitWidth="62.0" onMouseClicked="#switchJag" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/JAG-seal.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets right="425.0" top="345.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b18" text="Cyber">
+                     <StackPane.margin>
+                        <Insets left="425.0" top="265.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="cyberEffect" fitHeight="60.0" fitWidth="63.0" onMouseClicked="#switchCyber" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/newCyber.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets left="425.0" top="345.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b19" text="Med/Nurse">
+                     <StackPane.margin>
+                        <Insets right="290.0" top="380.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="medEffect" fitHeight="66.0" fitWidth="71.0" onMouseClicked="#switchMed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/medNurse.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets right="290.0" top="460.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b20" text="Chemical">
+                     <StackPane.margin>
+                        <Insets left="290.0" top="380.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="chemEffect" fitHeight="60.0" fitWidth="63.0" onMouseClicked="#switchChemical" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/US_Army_Chemical_Corps_logo.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets left="290.0" top="460.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label fx:id="b21" text="Transpo">
+                     <StackPane.margin>
+                        <Insets right="100.0" top="420.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ImageView fx:id="transpoEffect" fitHeight="60.0" fitWidth="63.0" onMouseClicked="#switchTranspo" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../JavaPics/BranchPics/transpo.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets right="100.0" top="500.0" />
+                     </StackPane.margin>
+                  </ImageView>
+               </children>
+               <FlowPane.margin>
+                  <Insets />
+               </FlowPane.margin>
+            </StackPane>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </FlowPane>
+   </children>
+
+</VBox>
