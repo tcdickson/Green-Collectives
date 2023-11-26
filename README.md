@@ -86,7 +86,7 @@ You can download the latest version of our application for different platforms:
 
 ### Windows:
 
-- [Windows Installer (.msi)](https://github.com/tcdickson/Green-Collectives/releases/download/v1.0.0/GreenCollectives_1.0.msi)
+- [Windows Installer (.msi)](https://github.com/tcdickson/Green-Collectives/releases/download/v1.0.0/GreenCollectives-1.0.msi)
 
 ### Linux Dedian/Ubuntu:
 
