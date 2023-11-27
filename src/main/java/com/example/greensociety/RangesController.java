@@ -39,43 +39,64 @@ public class RangesController extends HomeApplication implements Initializable {
     private final Map<String, Integer> pistolDrillToAmmoMap = new HashMap<>();
     private final Map<String, Integer> rifleDrillToAmmoMap = new HashMap<>();
 
+    private final HBox hbox = new HBox();
+
+    private final VBox drillContentBox = new VBox();
+    private final ScrollPane scrollPane = new ScrollPane();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         pistolList = new ListView<>();
-        pistolList.setPrefWidth(500);
+        pistolList.setPrefWidth(450);
         pistolList.setPrefHeight(600);
 
         rifleList = new ListView<>();
-        rifleList.setPrefWidth(500);
+        rifleList.setPrefWidth(450);
         rifleList.setPrefHeight(600);
         initPistolAndRifleList();
 
         setListWithCheckBox(pistolList);
         setListWithCheckBox(rifleList);
 
-        HBox hbox = new HBox();
-        hbox.setPrefWidth(1100);
-        hbox.setPrefHeight(700);
-        hbox.setSpacing(10);
-        HBox.setHgrow(pistolList, Priority.ALWAYS);
-        HBox.setHgrow(rifleList, Priority.ALWAYS);
-        hbox.getChildren().addAll(pistolList, rifleList);
-
-        StackPane labelButtonStack = new StackPane();
+        scrollPane.setPrefWidth(500);
+        scrollPane.setPrefHeight(600);
 
         Label label1 = new Label("Pistol Drills");
         label1.setFont(Font.font("Arial Black", FontWeight.BOLD, 16));
         label1.setTextFill(Color.DARKSLATEGRAY);
         label1.setEffect(new InnerShadow(BlurType.THREE_PASS_BOX, Color.rgb(0, 0, 0, 0.7), 6, 0.0, 0, 2));
-        label1.setTranslateX(-300);
-        label1.setTranslateY(0);
+        label1.setTranslateX(-360);
+        label1.setTranslateY(25);
 
         Label label2 = new Label("Rifle Drills");
         label2.setFont(Font.font("Arial Black", FontWeight.BOLD, 16));
         label2.setTextFill(Color.DARKSLATEGRAY);
         label2.setEffect(new InnerShadow(BlurType.THREE_PASS_BOX, Color.rgb(0, 0, 0, 0.7), 6, 0.0, 0, 2));
-        label2.setTranslateX(300);
-        label2.setTranslateY(0);
+        label2.setTranslateX(0);
+        label2.setTranslateY(25);
+
+        Label label3 = new Label("Drill Description");
+        label3.setFont(Font.font("Arial Black", FontWeight.BOLD, 16));
+        label3.setTextFill(Color.DARKSLATEGRAY);
+        label3.setEffect(new InnerShadow(BlurType.THREE_PASS_BOX, Color.rgb(0, 0, 0, 0.7), 6, 0.0, 0, 2));
+        label3.setTranslateX(360);
+        label3.setTranslateY(25);
+
+        hbox.setPrefWidth(1100);
+        hbox.setPrefHeight(700);
+        hbox.setSpacing(10);
+        hbox.setTranslateY(25);
+        HBox.setHgrow(pistolList, Priority.ALWAYS);
+        HBox.setHgrow(rifleList, Priority.ALWAYS);
+        HBox.setHgrow(scrollPane, Priority.ALWAYS);
+        HBox.setHgrow(label1, Priority.ALWAYS);
+        HBox.setHgrow(label2, Priority.ALWAYS);
+        HBox.setHgrow(label3, Priority.ALWAYS);
+
+
+        hbox.getChildren().addAll(label1, label2, label3, pistolList, rifleList, scrollPane);
+
+        StackPane labelButtonStack = new StackPane();
 
         Button buildMyPoi = new Button("Build My Range");
         buildMyPoi.getStyleClass().add("custom-button");
@@ -93,7 +114,7 @@ public class RangesController extends HomeApplication implements Initializable {
             }
         });
 
-        labelButtonStack.getChildren().addAll(label1, label2, buildMyPoi);
+        labelButtonStack.getChildren().addAll(label1, label2, label3, buildMyPoi);
 
         vbox.getChildren().addAll(labelButtonStack, hbox);
     }
@@ -155,298 +176,298 @@ public class RangesController extends HomeApplication implements Initializable {
                     if (selectedItem != null) {
                         switch (selectedItem) {
                             case "Basic Drill: One and Two Shots with a Scan":
-                                openNewScene(selectedItem, BasicDrillController.BASIC_DRILL, "https://www.youtube.com/watch?v=H6ZTfn0ad6E", true);
+                                previewContent(selectedItem, BasicDrillController.BASIC_DRILL, "https://www.youtube.com/watch?v=H6ZTfn0ad6E", true);
                                 break;
                             case "Single Shot with a Scan from the Holster":
-                                openNewScene(selectedItem, BasicDrillController.SINGLE_SHOT_SCAN, "https://www.youtube.com/watch?v=H6ZTfn0ad6E", true);
+                                previewContent(selectedItem, BasicDrillController.SINGLE_SHOT_SCAN, "https://www.youtube.com/watch?v=H6ZTfn0ad6E", true);
                                 break;
                             case "Immediate Action Drill":
-                                openNewScene(selectedItem, BasicDrillController.IMMEDIATE_ACTION, "https://www.youtube.com/watch?v=zOvT6UXOo74", true);
+                                previewContent(selectedItem, BasicDrillController.IMMEDIATE_ACTION, "https://www.youtube.com/watch?v=zOvT6UXOo74", true);
                                 break;
                             case "1-Reload-1":
-                                openNewScene(selectedItem, BasicDrillController.ONE_RELOAD_ONE, "https://www.youtube.com/shorts/V4VVMD9drI4", true);
+                                previewContent(selectedItem, BasicDrillController.ONE_RELOAD_ONE, "https://www.youtube.com/shorts/V4VVMD9drI4", true);
                                 break;
                             case "1-Reload-1: Strong Side":
-                                openNewScene(selectedItem, BasicDrillController.ONE_RELOAD_ONE_STRONG_S, "https://www.youtube.com/shorts/HELYSSxngtw", true);
+                                previewContent(selectedItem, BasicDrillController.ONE_RELOAD_ONE_STRONG_S, "https://www.youtube.com/shorts/HELYSSxngtw", true);
                                 break;
                             case "1-Reload-1: Support Side":
-                                openNewScene(selectedItem, BasicDrillController.ONE_RELOAD_ONE_SUPPORT_S, "https://www.youtube.com/watch?v=oRrRDONGBYM&t=9s", true);
+                                previewContent(selectedItem, BasicDrillController.ONE_RELOAD_ONE_SUPPORT_S, "https://www.youtube.com/watch?v=oRrRDONGBYM&t=9s", true);
                                 break;
                             case "2-Shots with a Scan from the Holster":
-                                openNewScene(selectedItem, BasicDrillController.TWO_SHOTS_SCAN_HOLSTER, "https://www.youtube.com/watch?v=H6ZTfn0ad6E", true);
+                                previewContent(selectedItem, BasicDrillController.TWO_SHOTS_SCAN_HOLSTER, "https://www.youtube.com/watch?v=H6ZTfn0ad6E", true);
                                 break;
                             case "2-Shots w/ Scan from the Holster (R)":
-                                openNewScene(selectedItem, BasicDrillController.TWO_SHOTS_SCAN_RIGHT_SHOULDER, "https://www.youtube.com/watch?v=H6ZTfn0ad6E", true);
+                                previewContent(selectedItem, BasicDrillController.TWO_SHOTS_SCAN_RIGHT_SHOULDER, "https://www.youtube.com/watch?v=H6ZTfn0ad6E", true);
                                 break;
                             case "2-Shots w/ Scan from the Holster (L)":
-                                openNewScene(selectedItem, BasicDrillController.TWO_SHOTS_SCAN_LEFT_SHOULDER, "https://www.youtube.com/watch?v=H6ZTfn0ad6E", true);
+                                previewContent(selectedItem, BasicDrillController.TWO_SHOTS_SCAN_LEFT_SHOULDER, "https://www.youtube.com/watch?v=H6ZTfn0ad6E", true);
                                 break;
                             case "2-Shots w/ a Scan from the Holster (B)":
-                                openNewScene(selectedItem, BasicDrillController.TWO_SHOTS_SCAN_BACK, "https://www.youtube.com/watch?v=hJCVShbsCKs", true);
+                                previewContent(selectedItem, BasicDrillController.TWO_SHOTS_SCAN_BACK, "https://www.youtube.com/watch?v=hJCVShbsCKs", true);
                                 break;
                             case "Brass on the Front Sight":
-                                openNewScene(selectedItem, BasicDrillController.BRASS_FRONT_SIGHT, "https://www.youtube.com/watch?v=EaHSZRnRqrA", true);
+                                previewContent(selectedItem, BasicDrillController.BRASS_FRONT_SIGHT, "https://www.youtube.com/watch?v=EaHSZRnRqrA", true);
                                 break;
                             case "Pencil Drill":
-                                openNewScene(selectedItem, BasicDrillController.PENCIL_DRILL, "https://www.youtube.com/watch?v=xMIYHYh2kqg", true);
+                                previewContent(selectedItem, BasicDrillController.PENCIL_DRILL, "https://www.youtube.com/watch?v=xMIYHYh2kqg", true);
                                 break;
                             case "Trigger Prep / Slack Out":
-                                openNewScene(selectedItem, BasicDrillController.TRIGGER_PREP, "https://www.youtube.com/watch?v=LN4bvv6oNVE&t=397s", true);
+                                previewContent(selectedItem, BasicDrillController.TRIGGER_PREP, "https://www.youtube.com/watch?v=LN4bvv6oNVE&t=397s", true);
                                 break;
                             case "Ball and Dummy":
-                                openNewScene(selectedItem, BasicDrillController.BALL_DUMMY, "https://www.youtube.com/watch?v=4Jf5MYbhuPk", true);
+                                previewContent(selectedItem, BasicDrillController.BALL_DUMMY, "https://www.youtube.com/watch?v=4Jf5MYbhuPk", true);
                                 break;
                             case "Bench Shooting":
-                                openNewScene(selectedItem, BasicDrillController.BENCH_SHOOTING, "", false);
+                                previewContent(selectedItem, BasicDrillController.BENCH_SHOOTING, "", false);
                                 break;
                             case "Figure 8 Drill":
-                                openNewScene(selectedItem, BasicDrillController.FIGURE_EIGHT, "https://www.youtube.com/watch?v=CO8feXGc9FY", true);
+                                previewContent(selectedItem, BasicDrillController.FIGURE_EIGHT, "https://www.youtube.com/watch?v=CO8feXGc9FY", true);
                                 break;
                             case "Ragged Hole Drill":
-                                openNewScene(selectedItem, BasicDrillController.RAGGED_HOLE, "https://www.youtube.com/watch?v=l5XqVvamIe8", true);
+                                previewContent(selectedItem, BasicDrillController.RAGGED_HOLE, "https://www.youtube.com/watch?v=l5XqVvamIe8", true);
                                 break;
                             case "Exemplar Drill":
-                                openNewScene(selectedItem, BasicDrillController.EXEMPLAR_DRILL, "", false);
+                                previewContent(selectedItem, BasicDrillController.EXEMPLAR_DRILL, "", false);
                                 break;
                             case "1-Inch Circle Warm-up / Cool Down":
-                                openNewScene(selectedItem, BasicDrillController.CIRCLE_WU_CD, "", false);
+                                previewContent(selectedItem, BasicDrillController.CIRCLE_WU_CD, "", false);
                                 break;
                             case "Throttle Control Rifle Drill (Vertical)":
-                                openNewScene(selectedItem, BasicDrillController.THROTTLE_CONTROL_VERT, "https://www.youtube.com/watch?v=HlLK5qrSxss", true);
+                                previewContent(selectedItem, BasicDrillController.THROTTLE_CONTROL_VERT, "https://www.youtube.com/watch?v=HlLK5qrSxss", true);
                                 break;
                             case "Throttle Control Rifle Drill (Variation)":
-                                openNewScene(selectedItem, BasicDrillController.THROTTLE_CONTROL_VARIATION, "https://www.youtube.com/watch?v=HlLK5qrSxss", true);
+                                previewContent(selectedItem, BasicDrillController.THROTTLE_CONTROL_VARIATION, "https://www.youtube.com/watch?v=HlLK5qrSxss", true);
                                 break;
                             case "One Finger Trigger Press Drill":
-                                openNewScene(selectedItem, BasicDrillController.ONE_FINGER_TP_DRILL, "https://www.youtube.com/watch?v=LN4bvv6oNVE", true);
+                                previewContent(selectedItem, BasicDrillController.ONE_FINGER_TP_DRILL, "https://www.youtube.com/watch?v=LN4bvv6oNVE", true);
                                 break;
                             case "1-2-3 Circle Pistol Drill":
-                                openNewScene(selectedItem, BasicDrillController.ONE_TWO_THREE_CIRCLE, "https://www.youtube.com/watch?v=Qr4kaZ-yeVU", true);
+                                previewContent(selectedItem, BasicDrillController.ONE_TWO_THREE_CIRCLE, "https://www.youtube.com/watch?v=Qr4kaZ-yeVU", true);
                                 break;
                             case "25-Yard Slow Aimed Fire":
-                                openNewScene(selectedItem, BasicDrillController.SLOW_AIM_FIRE, "", false);
+                                previewContent(selectedItem, BasicDrillController.SLOW_AIM_FIRE, "", false);
                                 break;
                             case "25-Yard Timed Drill":
-                                openNewScene(selectedItem, BasicDrillController.TWENTY_FIVE_TIMED, "", false);
+                                previewContent(selectedItem, BasicDrillController.TWENTY_FIVE_TIMED, "", false);
                                 break;
                             case "Blind Swordsman Drill":
-                                openNewScene(selectedItem, BasicDrillController.BLIND_SWORDSMAN, "https://www.youtube.com/watch?v=1GBZsFP1DsY", true);
+                                previewContent(selectedItem, BasicDrillController.BLIND_SWORDSMAN, "https://www.youtube.com/watch?v=1GBZsFP1DsY", true);
                                 break;
                             case "Cold Bore Hostage Drill":
-                                openNewScene(selectedItem, BasicDrillController.HOSTAGE_DRILL, "https://www.youtube.com/watch?v=tBvYkoSYnQk", true);
+                                previewContent(selectedItem, BasicDrillController.HOSTAGE_DRILL, "https://www.youtube.com/watch?v=tBvYkoSYnQk", true);
                                 break;
                             case "Walkback Drill":
-                                openNewScene(selectedItem, BasicDrillController.WALKBACK_DRILL, "https://www.youtube.com/watch?v=mQ5l4DIHoN8", true);
+                                previewContent(selectedItem, BasicDrillController.WALKBACK_DRILL, "https://www.youtube.com/watch?v=mQ5l4DIHoN8", true);
                                 break;
                             case "Rangemaster Bullseye Course":
-                                openNewScene(selectedItem, BasicDrillController.RANGEMASTER_BULLSEYE, "https://www.youtube.com/watch?v=FdVfaV7BTKo", true);
+                                previewContent(selectedItem, BasicDrillController.RANGEMASTER_BULLSEYE, "https://www.youtube.com/watch?v=FdVfaV7BTKo", true);
                                 break;
                             case "Cloverleaf Drill":
-                                openNewScene(selectedItem, BasicDrillController.CLOVERLEAF_DRILL, "https://www.youtube.com/watch?v=oPY7WoI2Ltg", true);
+                                previewContent(selectedItem, BasicDrillController.CLOVERLEAF_DRILL, "https://www.youtube.com/watch?v=oPY7WoI2Ltg", true);
                                 break;
                             case "Unknown Gun Drill":
-                                openNewScene(selectedItem, BasicDrillController.UNKNOWN_GUN_DRILL, "https://www.youtube.com/watch?v=WA-__YATfEU", true);
+                                previewContent(selectedItem, BasicDrillController.UNKNOWN_GUN_DRILL, "https://www.youtube.com/watch?v=WA-__YATfEU", true);
                                 break;
                             case "Ground Clock Drill":
-                                openNewScene(selectedItem, BasicDrillController.GROUND_CLOCK, "https://www.youtube.com/watch?v=EfxmzjVFU4s", true);
+                                previewContent(selectedItem, BasicDrillController.GROUND_CLOCK, "https://www.youtube.com/watch?v=EfxmzjVFU4s", true);
                                 break;
                             case "Forward Assault Drill":
-                                openNewScene(selectedItem, BasicDrillController.FORWARD_ASSAULT, "https://www.youtube.com/watch?v=aIUNQBtAzVo", true);
+                                previewContent(selectedItem, BasicDrillController.FORWARD_ASSAULT, "https://www.youtube.com/watch?v=aIUNQBtAzVo", true);
                                 break;
                             case "Catch 22 Drill":
-                                openNewScene(selectedItem, BasicDrillController.CATCH_TWENTY_TWO, "https://www.youtube.com/watch?v=8icYyJjPOFM", true);
+                                previewContent(selectedItem, BasicDrillController.CATCH_TWENTY_TWO, "https://www.youtube.com/watch?v=8icYyJjPOFM", true);
                                 break;
                             case "Tri-10 Drill":
-                                openNewScene(selectedItem, BasicDrillController.TRI_TEN_DRILL, "https://www.youtube.com/watch?v=10Ot9s3u3II", true);
+                                previewContent(selectedItem, BasicDrillController.TRI_TEN_DRILL, "https://www.youtube.com/watch?v=10Ot9s3u3II", true);
                                 break;
                             case "Triple Six Drill":
-                                openNewScene(selectedItem, BasicDrillController.TRIPLE_SIX, "https://www.youtube.com/watch?v=n9KHlMkIkrg", true);
+                                previewContent(selectedItem, BasicDrillController.TRIPLE_SIX, "https://www.youtube.com/watch?v=n9KHlMkIkrg", true);
                                 break;
                             case "Rifle/Handgun Transition Drill":
-                                openNewScene(selectedItem, BasicDrillController.TRANSITION_DRILL, "https://www.youtube.com/watch?v=M7lT7tDEjDU", true);
+                                previewContent(selectedItem, BasicDrillController.TRANSITION_DRILL, "https://www.youtube.com/watch?v=M7lT7tDEjDU", true);
                                 break;
                             case "Controlled Pair":
-                                openNewScene(selectedItem, BasicDrillController.CONTROLLED_PAIR, "https://www.youtube.com/watch?v=cMsvuiP-ROM", true);
+                                previewContent(selectedItem, BasicDrillController.CONTROLLED_PAIR, "https://www.youtube.com/watch?v=cMsvuiP-ROM", true);
                                 break;
                             case "Checklist Drill":
-                                openNewScene(selectedItem, BasicDrillController.CHECKLIST_DRILL, "", false);
+                                previewContent(selectedItem, BasicDrillController.CHECKLIST_DRILL, "", false);
                                 break;
                             case "Alternating Targets Drill":
-                                openNewScene(selectedItem, BasicDrillController.ALTERNATING_TARGETS, "https://www.youtube.com/watch?v=lbLhlhJ7QW8", true);
+                                previewContent(selectedItem, BasicDrillController.ALTERNATING_TARGETS, "https://www.youtube.com/watch?v=lbLhlhJ7QW8", true);
                                 break;
                             case "5-Second Standards":
-                                openNewScene(selectedItem, BasicDrillController.FIVE_SECOND_STANDARDS, "https://www.youtube.com/watch?v=S6MCY9_lO_8", true);
+                                previewContent(selectedItem, BasicDrillController.FIVE_SECOND_STANDARDS, "https://www.youtube.com/watch?v=S6MCY9_lO_8", true);
                                 break;
                             case "4567 Drill":
-                                openNewScene(selectedItem, BasicDrillController.FOUR_FIVE_SIX_SEVEN, "https://www.youtube.com/watch?v=IoX-0EjR-Tk", true);
+                                previewContent(selectedItem, BasicDrillController.FOUR_FIVE_SIX_SEVEN, "https://www.youtube.com/watch?v=IoX-0EjR-Tk", true);
                                 break;
                             case "Circle Drill":
-                                openNewScene(selectedItem, BasicDrillController.CIRCLE_DRILL, "https://www.youtube.com/watch?v=t368W6ot6lE", true);
+                                previewContent(selectedItem, BasicDrillController.CIRCLE_DRILL, "https://www.youtube.com/watch?v=t368W6ot6lE", true);
                                 break;
                             case "El Presidente Drill":
-                                openNewScene(selectedItem, BasicDrillController.EL_PREZ_DRILL, "https://www.youtube.com/watch?v=4ZdmmcEwdwE", true);
+                                previewContent(selectedItem, BasicDrillController.EL_PREZ_DRILL, "https://www.youtube.com/watch?v=4ZdmmcEwdwE", true);
                                 break;
                             case "Mozambique Drill":
-                                openNewScene(selectedItem, BasicDrillController.MOZAMBIQUE_DRILL, "https://www.youtube.com/watch?v=O8QrWm3Acc0", true);
+                                previewContent(selectedItem, BasicDrillController.MOZAMBIQUE_DRILL, "https://www.youtube.com/watch?v=O8QrWm3Acc0", true);
                                 break;
                             case "Dot Torture Drill":
-                                openNewScene(selectedItem, BasicDrillController.DOT_TORTURE_DRILL, "https://www.youtube.com/watch?v=PfwjzYetglg", true);
+                                previewContent(selectedItem, BasicDrillController.DOT_TORTURE_DRILL, "https://www.youtube.com/watch?v=PfwjzYetglg", true);
                                 break;
                             case "Collateral Drill":
-                                openNewScene(selectedItem, BasicDrillController.COLLATERAL_DRILL, "https://www.youtube.com/watch?v=0OGxiqNeRiE&t=1s", true);
+                                previewContent(selectedItem, BasicDrillController.COLLATERAL_DRILL, "https://www.youtube.com/watch?v=0OGxiqNeRiE&t=1s", true);
                                 break;
                             case "VTAC Triple Threat Drill":
-                                openNewScene(selectedItem, BasicDrillController.VTAC_TRIPLE_THREAT_DRILL, "https://www.youtube.com/watch?v=5K3FP6UqiT0", true);
+                                previewContent(selectedItem, BasicDrillController.VTAC_TRIPLE_THREAT_DRILL, "https://www.youtube.com/watch?v=5K3FP6UqiT0", true);
                                 break;
                             case "VTAC 1 to 5 Drill":
-                                openNewScene(selectedItem, BasicDrillController.VTAC_ONE_FIVE, "https://www.youtube.com/watch?v=5K3FP6UqiT0", true);
+                                previewContent(selectedItem, BasicDrillController.VTAC_ONE_FIVE, "https://www.youtube.com/watch?v=5K3FP6UqiT0", true);
                                 break;
                             case "VTAC Reload Drill":
-                                openNewScene(selectedItem, BasicDrillController.VTAC_RELOAD, "https://www.youtube.com/watch?v=2vc_-mlWtgs", true);
+                                previewContent(selectedItem, BasicDrillController.VTAC_RELOAD, "https://www.youtube.com/watch?v=2vc_-mlWtgs", true);
                                 break;
                             case "FAST Drill":
-                                openNewScene(selectedItem, BasicDrillController.FAST_DRILL, "https://www.youtube.com/watch?v=ZGJZRapjzOo&t=1s", true);
+                                previewContent(selectedItem, BasicDrillController.FAST_DRILL, "https://www.youtube.com/watch?v=ZGJZRapjzOo&t=1s", true);
                                 break;
                             case "Hackathorn 3-Second Headshot Standards":
-                                openNewScene(selectedItem, BasicDrillController.HACKATHORN_HEADSHOT, "https://www.youtube.com/watch?v=i66eYRJx6IU", true);
+                                previewContent(selectedItem, BasicDrillController.HACKATHORN_HEADSHOT, "https://www.youtube.com/watch?v=i66eYRJx6IU", true);
                                 break;
                             case "Switch Hitting Drill":
-                                openNewScene(selectedItem, BasicDrillController.SWITCH_HITTING_DRILL, "https://www.youtube.com/watch?v=n4nAQQ7yoyA", true);
+                                previewContent(selectedItem, BasicDrillController.SWITCH_HITTING_DRILL, "https://www.youtube.com/watch?v=n4nAQQ7yoyA", true);
                                 break;
                             case "Pistol Pyramid Drill":
-                                openNewScene(selectedItem, BasicDrillController.PISTOL_PYRAMID_DRILL, "https://www.youtube.com/watch?v=FX1BJ5U73Hk", true);
+                                previewContent(selectedItem, BasicDrillController.PISTOL_PYRAMID_DRILL, "https://www.youtube.com/watch?v=FX1BJ5U73Hk", true);
                                 break;
                             case "Tri-Lambda Drill":
-                                openNewScene(selectedItem, BasicDrillController.TRI_LAMBDA_DRILL, "https://www.youtube.com/watch?v=Cpe00rOXc8s", true);
+                                previewContent(selectedItem, BasicDrillController.TRI_LAMBDA_DRILL, "https://www.youtube.com/watch?v=Cpe00rOXc8s", true);
                                 break;
                             case "Punto Banco Drill (Pistols)":
-                                openNewScene(selectedItem, BasicDrillController.PUNTO_BANCO_DRILL, "", false);
+                                previewContent(selectedItem, BasicDrillController.PUNTO_BANCO_DRILL, "", false);
                                 break;
                             case "Punto Banco Drill (Rifle)":
-                                openNewScene(selectedItem, BasicDrillController.PUNTO_BANCO_DRILL, "", false);
+                                previewContent(selectedItem, BasicDrillController.PUNTO_BANCO_DRILL, "", false);
                                 break;
                             case "Par 5 Drill":
-                                openNewScene(selectedItem, BasicDrillController.PAR_FIVE_DRILL, "https://www.youtube.com/watch?v=MpMc_w-yY5M", true);
+                                previewContent(selectedItem, BasicDrillController.PAR_FIVE_DRILL, "https://www.youtube.com/watch?v=MpMc_w-yY5M", true);
                                 break;
                             case "Modified 5-Yard Round-Up Drill":
-                                openNewScene(selectedItem, BasicDrillController.MODIFIED_ROUND_UP_DRILL, "https://www.youtube.com/watch?v=ALpu9Zg2JAQ", true);
+                                previewContent(selectedItem, BasicDrillController.MODIFIED_ROUND_UP_DRILL, "https://www.youtube.com/watch?v=ALpu9Zg2JAQ", true);
                                 break;
                             case "1-2-Reload-3 Drill":
-                                openNewScene(selectedItem, BasicDrillController.ONE_TWO_RELOAD_THREE, "https://www.youtube.com/watch?v=lm0Io9z0cL8&t=9s", true);
+                                previewContent(selectedItem, BasicDrillController.ONE_TWO_RELOAD_THREE, "https://www.youtube.com/watch?v=lm0Io9z0cL8&t=9s", true);
                                 break;
                             case "Hateful 8":
-                                openNewScene(selectedItem, BasicDrillController.HATEFUL_EIGHT, "https://www.youtube.com/watch?v=yKZ4a8KnNDU", true);
+                                previewContent(selectedItem, BasicDrillController.HATEFUL_EIGHT, "https://www.youtube.com/watch?v=yKZ4a8KnNDU", true);
                                 break;
                             case "Throttle Control Drill":
-                                openNewScene(selectedItem, BasicDrillController.THROTTLE_CONTROL_DRILL, "https://www.youtube.com/watch?v=JuDzRbwMBmQ", true);
+                                previewContent(selectedItem, BasicDrillController.THROTTLE_CONTROL_DRILL, "https://www.youtube.com/watch?v=JuDzRbwMBmQ", true);
                                 break;
                             case "10-10-10 Shooting Drill":
-                                openNewScene(selectedItem, BasicDrillController.TEN_TEN_TEN, "https://www.youtube.com/watch?v=yx5ZyOLWpRE", true);
+                                previewContent(selectedItem, BasicDrillController.TEN_TEN_TEN, "https://www.youtube.com/watch?v=yx5ZyOLWpRE", true);
                                 break;
                             case "15 in 10 Shooting Drill":
-                                openNewScene(selectedItem, BasicDrillController.TEN_IN_FIFTEEN, "https://www.youtube.com/watch?v=App1MtvuWCo", true);
+                                previewContent(selectedItem, BasicDrillController.TEN_IN_FIFTEEN, "https://www.youtube.com/watch?v=App1MtvuWCo", true);
                                 break;
                             case "Wizard Drill":
-                                openNewScene(selectedItem, BasicDrillController.WIZARD_DRILL, "https://www.youtube.com/watch?v=GTZoi_3fE_Q", true);
+                                previewContent(selectedItem, BasicDrillController.WIZARD_DRILL, "https://www.youtube.com/watch?v=GTZoi_3fE_Q", true);
                                 break;
                             case "3 Target Transition Drill (Static)":
-                                openNewScene(selectedItem, BasicDrillController.THREE_TRANSITION_DRILL, "", false);
+                                previewContent(selectedItem, BasicDrillController.THREE_TRANSITION_DRILL, "", false);
                                 break;
                             case "Police Marksman Drill":
-                                openNewScene(selectedItem, BasicDrillController.POLICE_MARKSMAN_DRILL, "", false);
+                                previewContent(selectedItem, BasicDrillController.POLICE_MARKSMAN_DRILL, "", false);
                                 break;
                             case "X Drill":
-                                openNewScene(selectedItem, BasicDrillController.X_DRILL, "https://www.youtube.com/watch?v=gkinkQgPiSo", true);
+                                previewContent(selectedItem, BasicDrillController.X_DRILL, "https://www.youtube.com/watch?v=gkinkQgPiSo", true);
                                 break;
                             case "1-Reload-2 Drill":
-                                openNewScene(selectedItem, BasicDrillController.ONE_RELOAD_TWO, "https://www.youtube.com/shorts/V4VVMD9drI4", true);
+                                previewContent(selectedItem, BasicDrillController.ONE_RELOAD_TWO, "https://www.youtube.com/shorts/V4VVMD9drI4", true);
                                 break;
                             case "26662 Shooting Drill":
-                                openNewScene(selectedItem, BasicDrillController.TWO_SIX_SIX_SIX_TWO, "https://www.youtube.com/watch?v=0-sogms5QXU", true);
+                                previewContent(selectedItem, BasicDrillController.TWO_SIX_SIX_SIX_TWO, "https://www.youtube.com/watch?v=0-sogms5QXU", true);
                                 break;
                             case "3×5 Card Drill":
-                                openNewScene(selectedItem, BasicDrillController.THREE_FIVE_CARD_DRILL, "https://www.youtube.com/watch?v=YURLn54JykE", true);
+                                previewContent(selectedItem, BasicDrillController.THREE_FIVE_CARD_DRILL, "https://www.youtube.com/watch?v=YURLn54JykE", true);
                                 break;
                             case "4 x 20 Transition Drill":
-                                openNewScene(selectedItem, BasicDrillController.FOUR_TWENTY_TRANSITION, "", false);
+                                previewContent(selectedItem, BasicDrillController.FOUR_TWENTY_TRANSITION, "", false);
                                 break;
                             case "5 x 5 Skill Test":
-                                openNewScene(selectedItem, BasicDrillController.FIVE_FIVE_SKILL, "https://www.youtube.com/watch?v=-9AT0lWI-pg", true);
+                                previewContent(selectedItem, BasicDrillController.FIVE_FIVE_SKILL, "https://www.youtube.com/watch?v=-9AT0lWI-pg", true);
                                 break;
                             case "Press Six Drill":
-                                openNewScene(selectedItem, BasicDrillController.PRESS_SIX_DRILL, "https://www.youtube.com/watch?v=1-2U_8DFsJ0", true);
+                                previewContent(selectedItem, BasicDrillController.PRESS_SIX_DRILL, "https://www.youtube.com/watch?v=1-2U_8DFsJ0", true);
                                 break;
                             case "Langdon 3.5-Second Standards":
-                                openNewScene(selectedItem, BasicDrillController.LANGDON_THREE_SECOND, "https://www.youtube.com/watch?v=bHZM_bnHybQ", true);
+                                previewContent(selectedItem, BasicDrillController.LANGDON_THREE_SECOND, "https://www.youtube.com/watch?v=bHZM_bnHybQ", true);
                                 break;
                             case "Six Steel Plate Rack":
-                                openNewScene(selectedItem, BasicDrillController.SIX_STEEL_RACK, "https://www.youtube.com/watch?v=PhShNmkO18Y", true);
+                                previewContent(selectedItem, BasicDrillController.SIX_STEEL_RACK, "https://www.youtube.com/watch?v=PhShNmkO18Y", true);
                                 break;
                             case "Weaver Drill":
-                                openNewScene(selectedItem, BasicDrillController.WEAVER_DRILL, "https://www.facebook.com/watch/?v=390896456118262", true);
+                                previewContent(selectedItem, BasicDrillController.WEAVER_DRILL, "https://www.facebook.com/watch/?v=390896456118262", true);
                                 break;
                             case "Bill Drill":
-                                openNewScene(selectedItem, BasicDrillController.BILL_DRILL, "https://www.youtube.com/watch?v=PtIUk_PY3gc", true);
+                                previewContent(selectedItem, BasicDrillController.BILL_DRILL, "https://www.youtube.com/watch?v=PtIUk_PY3gc", true);
                                 break;
                             case "Bill Drill 2":
-                                openNewScene(selectedItem, BasicDrillController.BILL_DRILL_TWO, "https://www.youtube.com/watch?v=VYv94CZ25Es", true);
+                                previewContent(selectedItem, BasicDrillController.BILL_DRILL_TWO, "https://www.youtube.com/watch?v=VYv94CZ25Es", true);
                                 break;
                             case "Frank Garcia’s Dot Drill":
-                                openNewScene(selectedItem, BasicDrillController.FRANK_GARCIA_DOT, "https://www.youtube.com/watch?v=rRyCW981hQk", true);
+                                previewContent(selectedItem, BasicDrillController.FRANK_GARCIA_DOT, "https://www.youtube.com/watch?v=rRyCW981hQk", true);
                                 break;
                             case "VTAC Half and Half Drill":
-                                openNewScene(selectedItem, BasicDrillController.VTACK_HALF_HALF, "https://www.youtube.com/watch?v=2-oYRn_llgo", true);
+                                previewContent(selectedItem, BasicDrillController.VTACK_HALF_HALF, "https://www.youtube.com/watch?v=2-oYRn_llgo", true);
                                 break;
                             case "Prone Drill":
-                                openNewScene(selectedItem, BasicDrillController.PRONE_DRILL, "https://www.youtube.com/watch?v=97jyoAXxMvQ", true);
+                                previewContent(selectedItem, BasicDrillController.PRONE_DRILL, "https://www.youtube.com/watch?v=97jyoAXxMvQ", true);
                                 break;
                             case "Barricade Drill":
-                                openNewScene(selectedItem, BasicDrillController.BARRICADE_DRILL, "https://www.youtube.com/watch?v=nqM-tljetLU&t=14s", true);
+                                previewContent(selectedItem, BasicDrillController.BARRICADE_DRILL, "https://www.youtube.com/watch?v=nqM-tljetLU&t=14s", true);
                                 break;
                             case "2-R-2 Drill":
-                                openNewScene(selectedItem, BasicDrillController.TWO_R_TWO_DRILL, "https://www.youtube.com/watch?v=lm0Io9z0cL8&t=12s", true);
+                                previewContent(selectedItem, BasicDrillController.TWO_R_TWO_DRILL, "https://www.youtube.com/watch?v=lm0Io9z0cL8&t=12s", true);
                                 break;
                             case "Remedial Action":
-                                openNewScene(selectedItem, BasicDrillController.REMEDIAL_ACTION_DRILL, "https://www.youtube.com/watch?v=aKshL60xry4", true);
+                                previewContent(selectedItem, BasicDrillController.REMEDIAL_ACTION_DRILL, "https://www.youtube.com/watch?v=aKshL60xry4", true);
                                 break;
                             case "Emergency Reload Drill":
-                                openNewScene(selectedItem, BasicDrillController.EMERGENCY_RELOAD, "https://www.youtube.com/watch?v=2vc_-mlWtgs", true);
+                                previewContent(selectedItem, BasicDrillController.EMERGENCY_RELOAD, "https://www.youtube.com/watch?v=2vc_-mlWtgs", true);
                                 break;
                             case "Speed Reload Drill":
-                                openNewScene(selectedItem, BasicDrillController.SPEED_RELOAD, "", false);
+                                previewContent(selectedItem, BasicDrillController.SPEED_RELOAD, "", false);
                                 break;
                             case "Tactical Reload":
-                                openNewScene(selectedItem, BasicDrillController.TAC_RELOAD, "https://www.youtube.com/watch?v=vwfGVvFqkfY", true);
+                                previewContent(selectedItem, BasicDrillController.TAC_RELOAD, "https://www.youtube.com/watch?v=vwfGVvFqkfY", true);
                                 break;
                             case "3 Target Transition – Moving Forward":
-                                openNewScene(selectedItem, BasicDrillController.TARGET_TRANSITION_FORWARD, "", false);
+                                previewContent(selectedItem, BasicDrillController.TARGET_TRANSITION_FORWARD, "", false);
                                 break;
                             case "3 Target Transition – Left":
-                                openNewScene(selectedItem, BasicDrillController.TARGET_TRANSITION_LR, "", false);
+                                previewContent(selectedItem, BasicDrillController.TARGET_TRANSITION_LR, "", false);
                                 break;
                             case "3 Target Transition – Right":
-                                openNewScene(selectedItem, BasicDrillController.TARGET_TRANSITION_LR, "", false);
+                                previewContent(selectedItem, BasicDrillController.TARGET_TRANSITION_LR, "", false);
                                 break;
                             case "Figure 8 Movement Drill":
-                                openNewScene(selectedItem, BasicDrillController.FIGURE_EIGHT_MOVEMENT, "https://www.youtube.com/watch?v=acGtnrPm4e0", true);
+                                previewContent(selectedItem, BasicDrillController.FIGURE_EIGHT_MOVEMENT, "https://www.youtube.com/watch?v=acGtnrPm4e0", true);
                                 break;
                             case "Forward Movement":
-                                openNewScene(selectedItem, BasicDrillController.FORWARD_MOVEMENT, "https://www.youtube.com/watch?v=9AleLdhKYN0", true);
+                                previewContent(selectedItem, BasicDrillController.FORWARD_MOVEMENT, "https://www.youtube.com/watch?v=9AleLdhKYN0", true);
                                 break;
                             case "Backward Movement":
-                                openNewScene(selectedItem, BasicDrillController.BACKWARD_MOVEMENT, "https://www.youtube.com/watch?v=aW9Xg9SaWo0", true);
+                                previewContent(selectedItem, BasicDrillController.BACKWARD_MOVEMENT, "https://www.youtube.com/watch?v=aW9Xg9SaWo0", true);
                                 break;
                             case "Lateral Movement":
-                                openNewScene(selectedItem, BasicDrillController.LATERAL_MOVEMENT, "https://www.youtube.com/watch?v=yQjbZdyk3ZM", true);
+                                previewContent(selectedItem, BasicDrillController.LATERAL_MOVEMENT, "https://www.youtube.com/watch?v=yQjbZdyk3ZM", true);
                                 break;
                             case "Action – Reaction Drill":
-                                openNewScene(selectedItem, BasicDrillController.ACTION_REACTION, "", false);
+                                previewContent(selectedItem, BasicDrillController.ACTION_REACTION, "", false);
                                 break;
                             case "Gas Pedal Drill":
-                                openNewScene(selectedItem, BasicDrillController.GAS_PEDAL_DRILL, "https://www.youtube.com/shorts/voA4_LZjlbo", true);
+                                previewContent(selectedItem, BasicDrillController.GAS_PEDAL_DRILL, "https://www.youtube.com/shorts/voA4_LZjlbo", true);
                                 break;
                             case "Shoulder Transition Drill":
-                                openNewScene(selectedItem, BasicDrillController.SHOULDER_TRANSITION_DRILL, "https://www.youtube.com/watch?v=sFI68p1NioQ", true);
+                                previewContent(selectedItem, BasicDrillController.SHOULDER_TRANSITION_DRILL, "https://www.youtube.com/watch?v=sFI68p1NioQ", true);
                                 break;
                             default:
                                 break;
@@ -468,59 +489,34 @@ public class RangesController extends HomeApplication implements Initializable {
         });
     }
 
-    private void openNewScene(String title, String description, String videoURL, boolean loadWebView) {
-        try {
+    private void previewContent(String title, String description, String videoURL, boolean loadWebView) {
 
+        drillContentBox.getChildren().clear();
+        TextArea textArea = new TextArea(description);
+        textArea.getStyleClass().add("text-area-style");
+        textArea.setWrapText(true);
+        textArea.setEditable(false);
+        textArea.setPrefHeight(500);
+        textArea.setPrefWidth(400);
 
+        drillContentBox.getChildren().add(textArea);
 
+        if (loadWebView) {
+            WebView webView = new WebView();
+            WebEngine webEngine = webView.getEngine();
+            String apiKey = "AIzaSyCRo1WFf9xgZV8n22Vt1Hs9_Z6Iu85dRi0";
+            String modifiedVideoURL = videoURL + "?key=" + apiKey;
+            webEngine.setJavaScriptEnabled(true);
+            webEngine.load(modifiedVideoURL);
 
-            FXMLLoader loader = new FXMLLoader(HomeApplication.class.getResource("fxmlFilesShooting/basic_drill.fxml"));
-            Parent root = loader.load();
-            Scene scene = new Scene(root, 925, 870);
+            webView.setPrefHeight(400);
+            webView.setPrefWidth(400);
 
-            BasicDrillController basicDrillController = loader.getController();
-            VBox drillVBox = basicDrillController.drillVBox;
-
-            TextArea textArea = basicDrillController.getTextArea();
-            textArea.setText(description);
-            textArea.getStyleClass().add("text-area-style");
-
-            if (loadWebView) {
-                WebView newWebView = new WebView();
-                WebEngine webEngine = newWebView.getEngine();
-
-                String apiKey = "AIzaSyCRo1WFf9xgZV8n22Vt1Hs9_Z6Iu85dRi0";
-                String modifiedVideoURL = videoURL + "?key=" + apiKey;
-                webEngine.setJavaScriptEnabled(true);
-                webEngine.load(modifiedVideoURL);
-
-                drillVBox.getChildren().add(newWebView);
-                newWebView.setPrefHeight(400);
-                newWebView.setMinHeight(400);
-                newWebView.setPrefWidth(400);
-
-                String css = Objects.requireNonNull(this.getClass().getResource("CssFiles/shootingDrillCss.css")).toExternalForm();
-                scene.getStylesheets().add(css);
-
-                Stage newStage = new Stage();
-                newStage.setScene(scene);
-                newStage.setTitle(title);
-                newStage.setOnCloseRequest(event -> {
-                    newWebView.getEngine().load(null);
-                });
-
-                newStage.show();
-            } else {
-                Stage newStage = new Stage();
-                newStage.setScene(scene);
-                newStage.setTitle(title);
-                String css = Objects.requireNonNull(this.getClass().getResource("CssFiles/shootingDrillCss.css")).toExternalForm();
-                scene.getStylesheets().add(css);
-                newStage.show();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+            drillContentBox.getChildren().add(webView);
         }
+
+        scrollPane.setContent(drillContentBox);
+        scrollPane.setFitToWidth(true);
     }
 
     private void initPistolAndRifleList() {
