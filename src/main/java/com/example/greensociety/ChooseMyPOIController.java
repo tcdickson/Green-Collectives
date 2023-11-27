@@ -55,7 +55,6 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
         this.selectedItems = selectedItems;
         populateSelectedItems();
     }
-
     private void populateSelectedItems() {
         if (selectedItems != null) {
 
