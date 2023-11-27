@@ -62,7 +62,7 @@
 
 .list-view {
     -fx-background-color: #728362;
-    -fx-font-size:15px;
+    -fx-font-size:12px;
     -fx-text-fill: #5A5A5A;
     -fx-font-family: "Arial Black";
     -fx-font-weight: bold;
@@ -144,3 +144,54 @@
 .custom-button {
     -fx-font-size: 26px;
 }
+
+ .scroll-pane {
+  -fx-background-color: #728362;
+     -fx-font-size:15px;
+     -fx-text-fill: #5A5A5A;
+     -fx-font-family: "Arial Black";
+     -fx-font-weight: bold;
+     -fx-wrap-text: true;
+     -fx-cursor: hand;
+     -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+ }
+
+
+.scroll-bar:vertical {
+    -fx-background-color: #c9c9c9;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: #c9c9c9;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #5A5A5A;
+    -fx-background-radius: 0;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #3E3E3E;
+}
+
+.scroll-bar .track-background {
+    -fx-background-color: transparent;
+}
+
+.text-area-style {
+    -fx-font-family: 'Arial Black';
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #363534;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+
+}
+
+.text-area .content {
+    -fx-background-color: #728362;
+}
+
