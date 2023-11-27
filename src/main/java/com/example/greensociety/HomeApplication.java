@@ -6,7 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -20,6 +22,9 @@ public class HomeApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        Image customIcon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("JavaPics/greenSocietyIcon.png")));
+       stage.getIcons().add(customIcon);
+        stage.initStyle(StageStyle.DECORATED);
         launchHomePage(stage);
 
     }
