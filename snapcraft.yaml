@@ -4,7 +4,7 @@ version: '1.0'
 summary: Green Collectives - JavaFX Application
 description: |
   A Desktop Application built with javaFx with the intention of solving relevant problems and inefficiencies that U.S. Army Service members, and gun enthusiasts face on a daily basis.
-confinement: strict
+confinement: devmode
 
 grade: stable
 
@@ -24,6 +24,3 @@ parts:
     plugin: maven
     source: https://github.com/tcdickson/Green-Collectives.git
     source-type: git
-    maven-options:
-      - -DskipTests=true
-      - -Dsomarg=false
