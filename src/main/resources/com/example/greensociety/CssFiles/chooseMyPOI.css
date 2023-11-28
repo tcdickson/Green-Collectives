@@ -91,7 +91,7 @@
     -fx-padding: 10px;
     -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
      -fx-focus-color: #5A5A5A;
-     }
+}
 
  .scroll-pane {
     -fx-border-width: 0px;
