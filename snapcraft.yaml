@@ -24,6 +24,8 @@ parts:
     plugin: maven
     source: https://github.com/tcdickson/Green-Collectives.git
     source-type: git
-    maven-options:
-      - -DskipTests=true
-      - -Dsomarg=false
+
+  maven-deps:
+    plugin: nil
+    build-packages:
+      - maven
