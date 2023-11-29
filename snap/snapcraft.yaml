@@ -1,5 +1,5 @@
 name: green-collectives
-base: core22
+base: core18
 version: '1.0'
 summary: Green Collectives - JavaFX Application
 description: |
@@ -10,16 +10,23 @@ confinement: devmode
 
 apps:
   green-collectives:
-    command: java -jar $SNAP/target/greenSociety-1.0-SNAPSHOT-shaded.jar
-    environment:
-      JAVA_HOME: "$SNAP/home/tyty/.sdkman/candidates/java/21.0.1-oracle"
-      PATH: "$JAVA_HOME/bin:$PATH"
+    command: $SNAP/usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar $SNAP/green-collectives.jar
 
+    plugs:
+      - network
+      - network-bind
+      - home
+      - desktop
+      - desktop-legacy
+    environment:
+      JAVA_HOME: $SNAP/usr/lib/jvm/java-11-openjdk-amd64
+      SNAP_DESKTOP_RUNTIME: $SNAP/gnome-platform
 
 parts:
   green-collectives:
-    plugin: nil
+    plugin: dump
+    source: https://github.com/tcdickson/Green-Collectives.git
+    source-type: git
+    source-tag: master
     stage-packages:
-      - default-jre
-
-
+      - openjdk-11-jdk
