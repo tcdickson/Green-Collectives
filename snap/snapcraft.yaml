@@ -1,0 +1,26 @@
+name: green-collectives
+base: core22
+version: '1.0'
+summary: Green Collectives - JavaFX Application
+description: |
+  A Desktop Application built with javaFx with the intention of solving relevant problems and inefficiencies that U.S. Army Service members, and gun enthusiasts face on a daily basis.
+
+grade: stable
+confinement: devmode
+
+apps:
+  green-collectives:
+    command: java -jar $SNAP/target/greenSociety-1.0-SNAPSHOT-shaded.jar
+    environment:
+      JAVA_HOME: "$SNAP/home/tyty/.sdkman/candidates/java/21.0.1-oracle"
+      PATH: "$JAVA_HOME/bin:$PATH"
+
+
+parts:
+  green-collectives:
+    plugin: dump
+    source: https://github.com/tcdickson/Green-Collectives.git
+    source-type: git
+    source-tag: master
+    stage-packages:
+      - openjdk-21-jre
