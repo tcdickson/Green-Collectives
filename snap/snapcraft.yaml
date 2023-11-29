@@ -24,7 +24,7 @@ apps:
 
 parts:
   green-collectives:
-    plugin: dump
+    plugin: maven
     source: https://github.com/tcdickson/Green-Collectives.git
     source-type: git
     source-tag: master
