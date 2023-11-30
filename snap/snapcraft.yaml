@@ -1,5 +1,5 @@
 name: green-collectives
-base: core18
+base: core22
 version: '1.0'
 summary: Green Collectives - JavaFX Application
 description: |
@@ -10,7 +10,7 @@ confinement: devmode
 
 apps:
   green-collectives:
-    command: $SNAP/usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar $SNAP/green-collectives.jar
+    command: $SNAP/usr/lib/jvm/java-17-openjdk-amd64/bin/java -jar $SNAP/green-collectives.jar
 
     plugs:
       - network
