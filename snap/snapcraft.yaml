@@ -1,32 +1,32 @@
-name: green-collectives
-base: core22
-version: '1.0'
-summary: Green Collectives - JavaFX Application
-description: |
-  A Desktop Application built with javaFx with the intention of solving relevant problems and inefficiencies that U.S. Army Service members, and gun enthusiasts face on a daily basis.
+  name: green-collectives
+  base: core18
+  version: '1.0'
+  summary: Green Collectives - JavaFX Application
+  description: |
+    A Desktop Application built with javaFx with the intention of solving relevant problems and inefficiencies that U.S. Army Service members, and gun enthusiasts face on a daily basis.
 
-grade: stable
-confinement: devmode
+  grade: stable
+  confinement: devmode
 
-apps:
-  green-collectives:
-    command: java -jar $SNAP/green-collectives.jar
+  apps:
+    green-collectives:
+      command: $SNAP/usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar $SNAP/green-collectives.jar
 
-    plugs:
-      - network
-      - network-bind
-      - home
-      - desktop
-      - desktop-legacy
-    environment:
-      JAVA_HOME: $SNAP/usr/lib/jvm/java-11-openjdk-amd64
-      SNAP_DESKTOP_RUNTIME: $SNAP/gnome-platform
+      plugs:
+        - network
+        - network-bind
+        - home
+        - desktop
+        - desktop-legacy
+      environment:
+        JAVA_HOME: $SNAP/usr/lib/jvm/java-11-openjdk-amd64
+        SNAP_DESKTOP_RUNTIME: $SNAP/gnome-platform
 
-parts:
-  green-collectives:
-    plugin: dump
-    source: https://github.com/tcdickson/Green-Collectives.git
-    source-type: git
-    source-tag: master
-    stage-packages:
-      - openjdk-11-jdk
+  parts:
+    green-collectives:
+      plugin: dump
+      source: https://github.com/tcdickson/Green-Collectives.git
+      source-type: git
+      source-tag: master
+      stage-packages:
+        - openjdk-11-jdk
