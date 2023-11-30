@@ -10,7 +10,7 @@ confinement: devmode
 
 apps:
   green-collectives:
-    command: $SNAP/usr/lib/jvm/java-17-openjdk-amd64/bin/java -jar $SNAP/green-collectives.jar
+    command: java -jar $SNAP/green-collectives.jar
 
     plugs:
       - network
@@ -24,11 +24,9 @@ apps:
 
 parts:
   green-collectives:
-    plugin: maven
+    plugin: dump
     source: https://github.com/tcdickson/Green-Collectives.git
     source-type: git
     source-tag: master
-    maven-options:
-      [ -DskipTests=true, -Dsomarg=false ]
     stage-packages:
-      - openjdk-17-jdk
+      - openjdk-11-jdk
