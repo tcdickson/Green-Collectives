@@ -28,5 +28,7 @@ parts:
     source: https://github.com/tcdickson/Green-Collectives.git
     source-type: git
     source-tag: master
+    maven-options:
+      [ -DskipTests=true, -Dsomarg=false ]
     stage-packages:
       - openjdk-11-jdk
