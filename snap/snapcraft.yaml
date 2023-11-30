@@ -10,7 +10,7 @@
 
   apps:
     green-collectives:
-      command: $SNAP/usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar $SNAP/green-collectives.jar
+      command: run_green_collectives.sh
 
       plugs:
         - network
@@ -19,14 +19,17 @@
         - desktop
         - desktop-legacy
       environment:
-        JAVA_HOME: $SNAP/usr/lib/jvm/java-11-openjdk-amd64
+        JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
         SNAP_DESKTOP_RUNTIME: $SNAP/gnome-platform
 
   parts:
     green-collectives:
-      plugin: dump
+      plugin: nil
       source: https://github.com/tcdickson/Green-Collectives.git
       source-type: git
       source-tag: master
       stage-packages:
-        - openjdk-11-jdk
+        - openjdk-17-jdk
+      organize:
+        "run_green_collectives.sh": $SNAPCRAFT_PART_INSTALL/run_green_collectives.sh
+        "green-collectives.jar": $SNAPCRAFT_PART_INSTALL/green-collectives.jar
