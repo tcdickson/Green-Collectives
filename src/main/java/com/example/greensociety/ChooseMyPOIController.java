@@ -144,10 +144,8 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
                 PDPage templatePage = templateDocument.getPage(0);
                 PDPageContentStream contentStream = new PDPageContentStream(templateDocument, templatePage, PDPageContentStream.AppendMode.APPEND, true);
 
-//                PDType1Font font = PDType1Font.TIMES_ROMAN;
 
                 InputStream fontStream = getClass().getResourceAsStream("Files/times.ttf");
-//                Font fontStream = Font.loadFont(getClass().getResourceAsStream("Fonts/mortalCombat.ttf"), 25);
 
                 PDType0Font font = PDType0Font.load(templateDocument, fontStream);
 
