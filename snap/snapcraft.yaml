@@ -19,11 +19,11 @@
         - home
         - desktop
         - desktop-legacy
-        - mount-observe
-        - microstack-support
+        - x11
 
       environment:
         JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
+        _JAVA_OPTIONS: -Duser.home=$SNAP_USER_DATA
         SNAP_DESKTOP_RUNTIME: $SNAP/gnome-platform
 
   parts:
@@ -32,7 +32,9 @@
       source: .
       stage-packages:
         - openjdk-17-jdk
+
       override-build: |
         cp run_green_collectives.sh $SNAPCRAFT_PART_INSTALL/
-        cp green-collectives.jar $SNAPCRAFT_PART_INSTALL/
+        cp target/green-collectives.jar $SNAPCRAFT_PART_INSTALL/
+   
 

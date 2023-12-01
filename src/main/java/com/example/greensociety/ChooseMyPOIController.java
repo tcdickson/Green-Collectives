@@ -17,7 +17,7 @@ import javafx.scene.text.FontWeight;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.PDType0Font;
 
 import java.io.File;
 import java.io.IOException;
@@ -143,7 +143,13 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
                  PDDocument templateDocument = PDDocument.load(is)) {
                 PDPage templatePage = templateDocument.getPage(0);
                 PDPageContentStream contentStream = new PDPageContentStream(templateDocument, templatePage, PDPageContentStream.AppendMode.APPEND, true);
-                PDType1Font font = PDType1Font.TIMES_ROMAN;
+
+//                PDType1Font font = PDType1Font.TIMES_ROMAN;
+
+                InputStream fontStream = getClass().getResourceAsStream("Files/times.ttf");
+//                Font fontStream = Font.loadFont(getClass().getResourceAsStream("Fonts/mortalCombat.ttf"), 25);
+
+                PDType0Font font = PDType0Font.load(templateDocument, fontStream);
 
                 float x = 40;
                 float y = templatePage.getMediaBox().getHeight() - 50;
