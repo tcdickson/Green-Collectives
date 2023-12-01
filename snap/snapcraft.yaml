@@ -1,12 +1,13 @@
   name: green-collectives
+  icon: greenIcon.png
   base: core18
   version: '1.0'
   summary: Green Collectives - JavaFX Application
   description: |
-    A Desktop Application built with javaFx with the intention of solving relevant problems and inefficiencies that U.S. Army Service members, and gun enthusiasts face on a daily basis.
+    A Desktop Application built with javaFx with the intention of solving relevant problems and inefficiencies that U.S. Army Service members, and gun enthusiasts face on a daily basis. The application gives you access to valuable file resources, a comprehensive list of Military Links, Access to workouts, and it allows you to build a range by choosing from over 140 drills with an option to preview, and print the range to PDF.
 
   grade: stable
-  confinement: devmode
+  confinement: strict
 
   apps:
     green-collectives:
@@ -18,6 +19,9 @@
         - home
         - desktop
         - desktop-legacy
+        - mount-observe
+        - microstack-support
+
       environment:
         JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
         SNAP_DESKTOP_RUNTIME: $SNAP/gnome-platform
@@ -25,11 +29,10 @@
   parts:
     green-collectives:
       plugin: nil
-      source: https://github.com/tcdickson/Green-Collectives.git
-      source-type: git
-      source-tag: master
+      source: .
       stage-packages:
         - openjdk-17-jdk
-      organize:
-        "run_green_collectives.sh": $SNAPCRAFT_PART_INSTALL/run_green_collectives.sh
-        "green-collectives.jar": $SNAPCRAFT_PART_INSTALL/green-collectives.jar
+      override-build: |
+        cp run_green_collectives.sh $SNAPCRAFT_PART_INSTALL/
+        cp green-collectives.jar $SNAPCRAFT_PART_INSTALL/
+

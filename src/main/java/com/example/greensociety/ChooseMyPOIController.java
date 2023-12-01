@@ -1,5 +1,6 @@
 package com.example.greensociety;
 
+import javafx.application.HostServices;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -13,7 +14,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.stage.FileChooser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -55,6 +55,7 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
         this.selectedItems = selectedItems;
         populateSelectedItems();
     }
+
     private void populateSelectedItems() {
         if (selectedItems != null) {
 
@@ -134,13 +135,15 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
         VBox.setMargin(wrapper, new Insets(0, 0, 0, 110));
         rightVbox.getChildren().add(0, wrapper);
 
+        HostServices hostServices = getHostServices();
+
         printToPDF.setOnAction(e -> {
-            System.out.println("button triggered!");
+            System.out.println("button triggered!"); //Debug
             try (InputStream is = getClass().getResourceAsStream("Files/Template.pdf");
                  PDDocument templateDocument = PDDocument.load(is)) {
                 PDPage templatePage = templateDocument.getPage(0);
                 PDPageContentStream contentStream = new PDPageContentStream(templateDocument, templatePage, PDPageContentStream.AppendMode.APPEND, true);
-                PDType1Font font = PDType1Font.HELVETICA;
+                PDType1Font font = PDType1Font.TIMES_ROMAN;
 
                 float x = 40;
                 float y = templatePage.getMediaBox().getHeight() - 50;
@@ -188,17 +191,12 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
                     }
                 }
                 contentStream.close();
-                FileChooser fileChooser = new FileChooser();
-                fileChooser.setTitle("Save PDF");
-                fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF files", "*.pdf"));
-                File saveLocation = fileChooser.showSaveDialog(printToPDF.getScene().getWindow());
+                File tempFile = File.createTempFile("My Range", ".pdf");
+                templateDocument.save(tempFile);
 
-                if (saveLocation != null) {
-                    templateDocument.save(saveLocation.getAbsolutePath());
-                    System.out.println("PDF saved to: " + saveLocation.getAbsolutePath());
-                } else {
-                    System.out.println("PDF save cancelled.");
-                }
+                hostServices.showDocument(tempFile.toURI().toString());
+
+                contentStream.close();
 
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
