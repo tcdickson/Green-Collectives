@@ -76,6 +76,25 @@ The News Feature utilizes the Java Rome Library, and makes RSS feed requests to 
 ## Getting Started
 
 ### Dependencies
+```xml
+- org.apache.pdfbox:pdfbox:2.0.29
+- ch.qos.logback:logback-classic:1.4.11
+- org.slf4j:slf4j-api:2.0.6
+- org.apache.httpcomponents:httpclient:4.5.14
+- org.apache.pdfbox:fontbox:2.0.29
+- org.openjfx:javafx-web:20
+- com.rometools:rome:2.1.0
+- org.apache.pdfbox:pdfbox-tools:2.0.29
+- org.apache.pdfbox:xmpbox:2.0.29
+- com.gluonhq:ignite-common:1.2.2
+- org.openjfx:javafx-controls:20
+- org.openjfx:javafx-fxml:20
+- org.controlsfx:controlsfx:11.1.2
+- org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0
+- org.junit.jupiter:junit-jupiter-api:5.9.2 (with a 'test' scope)
+- org.junit.jupiter:junit-jupiter-engine:5.9.2 (with a 'test' scope)
+- com.vaadin.external.google:android-json:0.0.20131108.vaadin1
+```
 
 For a complete list of dependencies and their versions, please refer to the [pom.xml](pom.xml) file.
   
@@ -89,6 +108,14 @@ You can download the latest version of our application for different platforms:
 - [Windows Installer (.msi)](https://github.com/tcdickson/Green-Collectives/releases/download/v1.0.1/GreenCollectives-1.0.msi)
 
 ### Linux Dedian/Ubuntu:
+
+Easiest Way:
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/green-collectives)
+<br>
+
+Download From Releases: 
+<br>
 
 - [Linux (Debian-based)(.deb)](https://github.com/tcdickson/Green-Collectives/releases/download/v1.0.1/greencollectives_1.0_amd64.deb)
 
