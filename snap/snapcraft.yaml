@@ -1,10 +1,10 @@
   name: green-collectives
   icon: greenIcon.png
-  base: core18
+  base: core20
   version: '1.0'
-  summary: Green Collectives - JavaFX Application
+  summary: Enhancing Productivity for Military, and shooting enthusiasts
   description: |
-    A Desktop Application built with javaFx with the intention of solving relevant problems and inefficiencies that U.S. Army Service members, and gun enthusiasts face on a daily basis. The application gives you access to valuable file resources, a comprehensive list of Military Links, Access to workouts, and it allows you to build a range by choosing from over 140 drills with an option to preview, and print the range to PDF.
+    Green Collectives exists to solve relevant problems and inefficiencies U.S. Army service members, and gun enthusiasts face on a daily basis. Allowing you to access Green Collective's collaborative file sharing platform, a comprehensive list of relevant military Links compiled in one location, current events in real time, and access to challenging workouts designed by Green Beret's. Shooting enthusiasts can build custom range's by choosing from over 140 drills with an option to preview, and print the range to a PDF.
 
   grade: stable
   confinement: strict
@@ -20,11 +20,15 @@
         - desktop
         - desktop-legacy
         - x11
+        - opengl
+        - audio-playback
+        - wayland
+        - browser-support
 
       environment:
+        SNAP_DESKTOP_RUNTIME: $SNAP/gnome-platform
         JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
         _JAVA_OPTIONS: -Duser.home=$SNAP_USER_DATA
-        SNAP_DESKTOP_RUNTIME: $SNAP/gnome-platform
 
   parts:
     green-collectives:
@@ -32,9 +36,20 @@
       source: .
       stage-packages:
         - openjdk-17-jdk
+        - libcanberra-gtk3-module
+        - libcanberra-gtk-module
+
+      build-packages:
+        - ca-certificates
+        - ca-certificates-java
 
       override-build: |
         cp run_green_collectives.sh $SNAPCRAFT_PART_INSTALL/
         cp target/green-collectives.jar $SNAPCRAFT_PART_INSTALL/
-   
+
+  layout:
+    /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri:
+     symlink: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dri
+    /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gtk-3.0/modules:
+     symlink: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gtk-3.0/modules
 

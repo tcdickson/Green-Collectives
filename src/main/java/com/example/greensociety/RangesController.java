@@ -1,7 +1,9 @@
 package com.example.greensociety;
 
 
+import javafx.application.HostServices;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -19,8 +21,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -500,19 +500,19 @@ public class RangesController extends HomeApplication implements Initializable {
         textArea.setPrefWidth(400);
 
         drillContentBox.getChildren().add(textArea);
+        HostServices hostServices = getHostServices();
 
         if (loadWebView) {
-            WebView webView = new WebView();
-            WebEngine webEngine = webView.getEngine();
-            String apiKey = "AIzaSyCRo1WFf9xgZV8n22Vt1Hs9_Z6Iu85dRi0";
-            String modifiedVideoURL = videoURL + "?key=" + apiKey;
-            webEngine.setJavaScriptEnabled(true);
-            webEngine.load(modifiedVideoURL);
+            Hyperlink hyperlink = new Hyperlink("Video Demo");
+            hyperlink.getStyleClass().add("hyperlink-format");
+            hyperlink.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent e) {
+                    hostServices.showDocument(videoURL);
+                }
+            });
 
-            webView.setPrefHeight(400);
-            webView.setPrefWidth(400);
-
-            drillContentBox.getChildren().add(webView);
+            drillContentBox.getChildren().add(hyperlink);
         }
 
         scrollPane.setContent(drillContentBox);

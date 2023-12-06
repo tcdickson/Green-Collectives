@@ -145,6 +145,15 @@
     -fx-font-size: 26px;
 }
 
+.hyperlink-format {
+         -fx-font-size: 26px;
+            -fx-text-fill: darkslategray;
+            -fx-font-weight: bold;
+            -fx-alignment: center;
+            -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+            -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
  .scroll-pane {
   -fx-background-color: #728362;
      -fx-font-size:15px;
@@ -152,7 +161,6 @@
      -fx-font-family: "Arial Black";
      -fx-font-weight: bold;
      -fx-wrap-text: true;
-     -fx-cursor: hand;
      -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
  }
 

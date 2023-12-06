@@ -20,6 +20,7 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -35,14 +36,20 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
     private List<String> selectedItems;
     private Map<String, Integer> pistolDrillToAmmoMap;
     private Map<String, Integer> rifleDrillToAmmoMap;
+
     @FXML
     private VBox leftVbox;
 
     @FXML
     private VBox rightVbox;
 
+
     List<Spinner<Integer>> shooterSpinners = new ArrayList<>();
     List<Spinner<Integer>> iterationSpinners = new ArrayList<>();
+    List<File> generatedPDFs = new ArrayList<>();
+    public void initializeGeneratedPDFsList(List<File> generatedPDFs) {
+        this.generatedPDFs = generatedPDFs;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -97,6 +104,7 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
         }
     }
 
+
     @FXML
     private void handleAmmoExpenditure() {
         rightVbox.getChildren().clear();
@@ -137,15 +145,19 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
 
         HostServices hostServices = getHostServices();
 
+        String destinationDirectory = System.getenv("SNAP_USER_DATA");
+        String pdfFileName = "My Range";
+        String pdfFilePath = destinationDirectory + "/pdf-files/" + pdfFileName;
+
         printToPDF.setOnAction(e -> {
             System.out.println("button triggered!"); //Debug
+
             try (InputStream is = getClass().getResourceAsStream("Files/Template.pdf");
                  PDDocument templateDocument = PDDocument.load(is)) {
                 PDPage templatePage = templateDocument.getPage(0);
                 PDPageContentStream contentStream = new PDPageContentStream(templateDocument, templatePage, PDPageContentStream.AppendMode.APPEND, true);
 
-
-                InputStream fontStream = getClass().getResourceAsStream("Files/times.ttf");
+                InputStream fontStream = getClass().getResourceAsStream("Fonts/times.ttf");
 
                 PDType0Font font = PDType0Font.load(templateDocument, fontStream);
 
@@ -195,12 +207,26 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
                     }
                 }
                 contentStream.close();
-                File tempFile = File.createTempFile("My Range", ".pdf");
-                templateDocument.save(tempFile);
+                try (FileOutputStream fos = new FileOutputStream(pdfFilePath)) {
 
-                hostServices.showDocument(tempFile.toURI().toString());
+                    File pdfFile = new File(pdfFilePath);
+                    String uniqueFileName = pdfFilePath.replace(".pdf", "_" + System.currentTimeMillis() + ".pdf");
+                    pdfFile.renameTo(new File(uniqueFileName));
+                    pdfFile = new File(uniqueFileName);
+                    templateDocument.save(pdfFile);
 
-                contentStream.close();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                File pdfFile = new File(pdfFilePath);
+                String uniqueFileName = pdfFilePath.replace(".pdf", "_" + System.currentTimeMillis() + ".pdf");
+                pdfFile.renameTo(new File(uniqueFileName));
+                pdfFile = new File(uniqueFileName);
+                templateDocument.save(pdfFile);
+
+                templateDocument.close();
+                hostServices.showDocument(pdfFile.toURI().toString());
+
 
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
