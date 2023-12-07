@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GreenCollectives
+Comment=GreenCollectives
+Exec=/opt/greencollectives/bin/GreenCollectives
+Icon=/opt/greencollectives/lib/GreenCollectives.png
+Terminal=false
+Type=Application
+Categories=Unknown
+MimeType=
