@@ -145,9 +145,13 @@ public class ChooseMyPOIController extends HomeApplication implements Initializa
 
         HostServices hostServices = getHostServices();
 
-        String destinationDirectory = System.getenv("SNAP_USER_DATA");
+        //        String destinationDirectory = System.getenv("SNAP_USER_DATA");
+        String destinationDirectory = "Files";
+
         String pdfFileName = "My Range";
-        String pdfFilePath = destinationDirectory + "/pdf-files/" + pdfFileName;
+
+//        String pdfFilePath = destinationDirectory + "/pdf-files/" + pdfFileName;
+        String pdfFilePath = destinationDirectory + pdfFileName;
 
         printToPDF.setOnAction(e -> {
             System.out.println("button triggered!"); //Debug
